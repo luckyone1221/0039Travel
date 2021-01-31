@@ -109,31 +109,12 @@ const JSCCommon = {
 
 	// tabs  .
 	tabscostume(tab) {
-
-		let tabs = {
-			Btn: [].slice.call(document.querySelectorAll(`.tabs__btn`)),
-			BtnParent: [].slice.call(document.querySelectorAll(`.tabs__caption`)),
-			Content: [].slice.call(document.querySelectorAll(`.tabs__content`)),
-		}
-		tabs.Btn.forEach((element, index) => {
-			element.addEventListener('click', () => {
-				if (!element.classList.contains('active')) {
-					let siblings = element.parentNode.querySelector(`.tabs__btn.active`);
-					let siblingsContent = tabs.Content[index].parentNode.querySelector(`.tabs__content.active`);
-					siblings.classList.remove('active');
-					siblingsContent.classList.remove('active')
-					element.classList.add('active');
-					tabs.Content[index].classList.add('active');
-				}
-			})
-		})
-		// $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-
-		// });
+		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+			$(this)
+				.addClass('active').siblings().removeClass('active')
+				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
+				.eq($(this).index()).fadeIn().addClass('active');
+		});
 
 	},
 	// /tabs
@@ -232,7 +213,7 @@ const $ = jQuery;
 function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('.tabs--js');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
@@ -242,27 +223,33 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = 'main.jpg';
+	screenName = '01-1200.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
+	//when resize
+	let topNav = document.querySelector('.top-nav');
+	let topHeader = document.querySelector("header ");
+
 	function whenResize() {
-		const topH = document.querySelector("header ").offsetHeight;
+		let topH = topHeader.offsetHeight;
+
 		if ($(window).scrollTop() > topH) {
-			document.querySelector('.top-nav  ').classList.add('fixed');
+			topNav.classList.add('fixed');
 		} else {
-			document.querySelector('.top-nav  ').classList.remove('fixed');
+			topNav.classList.remove('fixed');
 		}
 
 	}
 
-	window.addEventListener('resize', () => {
+	if (topNav && topHeader){
+		window.addEventListener('resize', whenResize, { passive: true });
+
 		whenResize();
+	}
 
-	}, { passive: true });
-
-	whenResize();
+	//end when resize
 
 
 	let defaultSl = {
@@ -299,6 +286,81 @@ function eventHandler() {
 
 	});
 	// modal window
+
+	//luckyone js
+
+	//creates group of toggle els with only 1 atcive by parent element
+	function makeDDGroup(qSelecorts){
+		for (let parentSelect of qSelecorts){
+			let parent = document.querySelector(parentSelect);
+
+			if (parent){
+				// childHeads, kind of funny))
+				let ChildHeads = parent.querySelectorAll('.dd-head-js');
+
+				$(ChildHeads).click(function (){
+					let clickedHead = this;
+
+					$(ChildHeads).each(function (){
+						if (this === clickedHead){
+							$(this.parentElement).toggleClass('active');
+							$(this.parentElement).find('.dd-content-js').slideToggle(function (){
+								$(this).toggleClass('active');
+							});
+						}
+						else{
+							$(this.parentElement).toggleClass('active');
+							$(this.parentElement).find('.dd-content-js').slideUp(function (){
+								$(this).removeClass('active');
+							});
+						}
+					});
+				});
+
+			}
+
+		}
+	}
+	makeDDGroup(['.dd-menu-js']);
+
+	//slider in tab
+	let AllSliders = document.querySelectorAll('.galery-slider-js');
+	for (let parent of AllSliders){
+		let galerySlider = new Swiper(parent, {
+			loop: true,
+			slidesPerView: 'auto',
+			spaceBetween: 5,
+
+			//lazy load
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 5,
+			},
+
+			//nav
+			navigation: {
+				nextEl: $(parent).closest('.galerySlider--js').find('.galery-next--js'),
+				prevEl: $(parent).closest('.galerySlider--js').find('.galery-prev--js'),
+			},
+		});
+	}
+
+	// let activeTabIndex = $('.sAgencyPractice__tabs-bar-item.active').index();
+	// $('.sAgencyPractice__tabs-bar-item').click(function () {
+	// 	if (this.classList.contains('active')) return
+	//
+	// 	activeTabIndex = $(this).index();
+	// 	let thisSwiper = AllParents[activeTabIndex].querySelector('.agency-practice-sw-cont-js');
+	//
+	// 	window.setTimeout(function () {
+	// 		thisSwiper.swiper.update();
+	// 	}, 50);
+	// });
+
+	//.galery-slider-js
+
+
+	//end luckyone js
 
 };
 if (document.readyState !== 'loading') {

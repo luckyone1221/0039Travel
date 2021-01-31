@@ -2,8 +2,181 @@ mixin sContent()
 	// start sContent
 	+b.SECTION.sContent.section#sContent&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContent
-				
-			.row
+			+e.back-link(href='#')
+				+icon('arrow-left')
+				span ДАТЫ И ЦЕНЫ
+			+b.section-title.text-center.text-xl-start
+				h2.d-md-none БАЗОВЫЕ ЛАГЕРЯ компании
+				p.d-md-none Central Asia Travel
+				h2.d-none.d-md-block БАЗОВЫЕ ЛАГЕРЯ
+				p.d-none.d-md-block компании Central Asia Travel
+			+e.main-row.row
+				+e.left-col.col-xl-auto
+					+b.social
+						+socItem('fb')
+						+socItem('tw')
+						+socItem('vb')
+						+socItem('wa')
+						+socItem('tg')
+					//-tabs
+					+b.tabs
+						+e.caption
+							+e.btn Базовый лагерь  (3600 м)
+							+e.btn Лагерь 1 «Солнечный» (4400 м)
+							+e.btn.active Меню базовых лагерей
+						+e.wrap
+							+e.content 1
+							+e.content 2
+							+e.content.active
+								+lastTabContent()
+					+videoBaner()
+					+formStrip()
+				+e.right-col.col-xl-auto
+					+rightColCont()
 	// end sContent
+
+mixin socItem(icon)
+	+e.item(href='#')
+		+icon(icon)
+
+mixin socItemAlt(imgName)
+	+e.item(href='#')
+		img(loading="lazy" src=`img/@2x/${imgName}` alt="")
+
+mixin rightColCont()
+	+b.inerestingBl
+		+e.H4.title.text-center.d-xl-none Это интересно
+		+e.row.row
+			+rightColItem(1)
+				| Наши восходители
+			+rightColItem(2)
+				| отзывы о нас
+			+rightColItem(3)
+				| Экологическая акция
+				br
+				| «Чистый снег»
+		+b.soc-row.row.justify-content-center.d-none.d-xl-flex
+			.col-auto
+				+socItemAlt('fb2.png')
+			.col-auto
+				+socItemAlt('inst2.png')
+			.col-auto
+				+socItemAlt('tw2.png')
+			.col-auto
+				+socItemAlt('yt2.png')
+
+mixin rightColItem(imgNum)
+	.col-12.col-md-4.col-xl-12
+		+e.img(href="#")
+			img(loading="lazy" src=`img/@2x/r-col-${imgNum}.jpg`)
+		+e.txt(href='#')
+			block
+
+mixin ddItem(HeadTxt, activeClass)
+	+e.dd-item(class=activeClass)
+		+e.dd-head.dd-head-js
+			+e.dd-h-txt=HeadTxt
+			+e.dd-h-plus
+				+icon('plus')
+		+e.dd-content.dd-content-js(class=activeClass)
+			block
+
+mixin lightSt(imgName,lsTxt)
+	+e.light-streep
+		+e.ls-img
+			img(loading="lazy" src=`img/@2x/ls-${imgName}.png` alt="")
+		+e.ls-txt=lsTxt
+
+mixin lsImg(imgName)
+	+e.ls-pic-cont&attributes(attributes)
+		+e.ls-pic
+			img(loading="lazy" src=`img/@2x/${imgName}.jpg` alt="")
+
+mixin lastTabContent()
+	+b.tabContent
+		+e.H4.title
+			| ПИТАНИЕ В БАЗОВОМ ЛАГЕРЕ И ЛАГЕРЕ 1 ПОД ПИКОМ ЛЕНИНА
+			|
+			br.d-none.d-md-block
+			| КОМПАНИИ CENTRAL ASIA TRAVEL
+		+e.img-bl
+			img(loading="lazy" src="img/@2x/food-img.jpg" alt="")
+		+e.txt-box
+			p
+				| У нас в Базовом лагере (3600 м) и Лагере 1 (4400 м) под пиком Ленина работают
+				|
+				strong профессиональные повара
+				|. Они готовят изумительно вкусные, разнообразные и полезные блюда исключительно из свежих и натуральных продуктов, которые мы регулярно привозим из Оша. Наши
+				|
+				strong порции всегда очень щедрые,
+				|
+				| обильные, а если вдруг кто-то не наелся или просто желает дополнительную порцию понравившегося блюда, он может попросить добавку неограниченное число раз.
+			p
+				strong Дневное меню
+				|
+				| тщательно продумано и обязательно включает в себя
+				|
+				strong большое количество свежих фруктов и овощей,
+				|
+				| первые и вторые блюда национальной и европейской кухонь (предусмотрены также вегетарианские блюда и индивидуальное питание), десерты и сладости. Даже в Лагере 1 (4400 м), куда мы поднимаем продукты на лошадях, у нас всегда есть в ассортименте свежие фрукты и овощи, потому что мы знаем, насколько важную роль играет
+				|
+				strong правильное питание
+				|
+				| при восхождении.
+			p
+				| Кроме того, наши повара очень творчески подходят к своей работе и часто удивляют гостей восхитительными
+				|
+				strong пирогами
+				|
+				| и
+				strong тортами
+				|
+				| даже в условиях сурового высокогорья.
+			p
+				| У нас в рационе также всегда есть
+				|
+				strong свежий хлеб.
+				|
+				| Мы ежедневно выпекаем его сами в тандырной печи, расположенной на территории Базового лагеря.
+		+e.dd-items.dd-menu-js
+			+ddItem('Краткое описание дневного меню Базового лагеря (3600) и Лагеря 1 (4400)', 'active')
+				//-1
+				+lightSt(1,'Завтрак')
+				+e.ls-content
+					ul
+						//-•
+						li Колбасно-сырное ассорти;
+						li Первое блюдо: разнообразные молочные каши;
+						li Второе блюдо: гренки / оладьи / омлеты / сосиски / и т.п.;
+						li Десерт: конфеты, печенье, вафли, сухофрукты.
+					+e.sub-title Стандартный набор:
+					ul
+						li Кетчуп, майонез, горчица, аджика, хрен, хлеб (ассорти);
+						li Чай (черный, зеленый), кофе, какао, сухие сливки, шоколадный крем, варенье/джем, сахар.
+					+lsImg('food-1')
+				//-2
+				+lightSt(2,'Обед')
+				+e.ls-content
+					ul
+						li Салат (1 вид): разнообразный выбор овощных и мясных салатов;
+						li Первое блюдо: разнообразные супы (овощные, мясные);
+						li Второе блюдо: разнообразный выбор блюд восточной и европейской кухни;
+						li Десерт: фрукты, конфеты, печенье, вафли, сухофрукты.
+					+e.sub-title Стандартный набор:
+					ul
+						li Кетчуп, майонез, горчица, аджика, хрен, хлеб (ассорти);
+						li Чай (черный, зеленый), кофе, какао, сухие сливки, шоколадный крем, варенье/джем, сахар.
+					+lsImg('food-2')
+				//-3
+				+lightSt(3,'Ужин')
+				+e.ls-content--pb0
+					ul
+						li Салат (2 вида): разнообразный выбор овощных и мясных салатов;
+						li Второе блюдо: разнообразный выбор блюд восточной и европейской кухни;
+						li Десерт: фрукты, конфеты, орешки (в ассортименте).
+					+lsImg('food-3')(class="d-none d-md-block")
+				+e.download-strip(href="#")
+					+e.d-icon
+						img(loading="lazy" src="img/@2x/download-icon.png" alt="")
+					span Скачать файл с детальным описанием меню
+		+menuGalerySlider()

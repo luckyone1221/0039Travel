@@ -1,5 +1,11 @@
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -123,28 +129,9 @@ var JSCCommon = {
 	// /mobileMenu
 	// tabs  .
 	tabscostume: function tabscostume(tab) {
-		var tabs = {
-			Btn: [].slice.call(document.querySelectorAll(".tabs__btn")),
-			BtnParent: [].slice.call(document.querySelectorAll(".tabs__caption")),
-			Content: [].slice.call(document.querySelectorAll(".tabs__content"))
-		};
-		tabs.Btn.forEach(function (element, index) {
-			element.addEventListener('click', function () {
-				if (!element.classList.contains('active')) {
-					var siblings = element.parentNode.querySelector(".tabs__btn.active");
-					var siblingsContent = tabs.Content[index].parentNode.querySelector(".tabs__content.active");
-					siblings.classList.remove('active');
-					siblingsContent.classList.remove('active');
-					element.classList.add('active');
-					tabs.Content[index].classList.add('active');
-				}
-			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
+		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).fadeIn().addClass('active');
+		});
 	},
 	// /tabs
 	inputMask: function inputMask() {
@@ -244,7 +231,7 @@ function eventHandler() {
 
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('.tabs--js');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
@@ -253,28 +240,34 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = 'main.jpg';
+	screenName = '01-1200.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	}
+	} //when resize
+
+
+	var topNav = document.querySelector('.top-nav');
+	var topHeader = document.querySelector("header ");
 
 	function whenResize() {
-		var topH = document.querySelector("header ").offsetHeight;
+		var topH = topHeader.offsetHeight;
 
 		if ($(window).scrollTop() > topH) {
-			document.querySelector('.top-nav  ').classList.add('fixed');
+			topNav.classList.add('fixed');
 		} else {
-			document.querySelector('.top-nav  ').classList.remove('fixed');
+			topNav.classList.remove('fixed');
 		}
 	}
 
-	window.addEventListener('resize', function () {
+	if (topNav && topHeader) {
+		window.addEventListener('resize', whenResize, {
+			passive: true
+		});
 		whenResize();
-	}, {
-		passive: true
-	});
-	whenResize();
+	} //end when resize
+
+
 	var defaultSl = (_defaultSl = {
 		spaceBetween: 0,
 		lazy: {
@@ -300,6 +293,92 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+	//luckyone js
+	//creates group of toggle els with only 1 atcive by parent element
+
+	function makeDDGroup(qSelecorts) {
+		var _iterator = _createForOfIteratorHelper(qSelecorts),
+				_step;
+
+		try {
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				var parentSelect = _step.value;
+				var parent = document.querySelector(parentSelect);
+
+				if (parent) {
+					(function () {
+						// childHeads, kind of funny))
+						var ChildHeads = parent.querySelectorAll('.dd-head-js');
+						$(ChildHeads).click(function () {
+							var clickedHead = this;
+							$(ChildHeads).each(function () {
+								if (this === clickedHead) {
+									$(this.parentElement).toggleClass('active');
+									$(this.parentElement).find('.dd-content-js').slideToggle(function () {
+										$(this).toggleClass('active');
+									});
+								} else {
+									$(this.parentElement).toggleClass('active');
+									$(this.parentElement).find('.dd-content-js').slideUp(function () {
+										$(this).removeClass('active');
+									});
+								}
+							});
+						});
+					})();
+				}
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	makeDDGroup(['.dd-menu-js']); //slider in tab
+
+	var AllSliders = document.querySelectorAll('.galery-slider-js');
+
+	var _iterator2 = _createForOfIteratorHelper(AllSliders),
+			_step2;
+
+	try {
+		for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+			var parent = _step2.value;
+			var galerySlider = new Swiper(parent, {
+				loop: true,
+				slidesPerView: 'auto',
+				spaceBetween: 5,
+				//lazy load
+				lazy: {
+					loadPrevNext: true,
+					loadPrevNextAmount: 5
+				},
+				//nav
+				navigation: {
+					nextEl: $(parent).closest('.galerySlider--js').find('.galery-next--js'),
+					prevEl: $(parent).closest('.galerySlider--js').find('.galery-prev--js')
+				}
+			});
+		} // let activeTabIndex = $('.sAgencyPractice__tabs-bar-item.active').index();
+		// $('.sAgencyPractice__tabs-bar-item').click(function () {
+		// 	if (this.classList.contains('active')) return
+		//
+		// 	activeTabIndex = $(this).index();
+		// 	let thisSwiper = AllParents[activeTabIndex].querySelector('.agency-practice-sw-cont-js');
+		//
+		// 	window.setTimeout(function () {
+		// 		thisSwiper.swiper.update();
+		// 	}, 50);
+		// });
+		//.galery-slider-js
+		//end luckyone js
+
+	} catch (err) {
+		_iterator2.e(err);
+	} finally {
+		_iterator2.f();
+	}
 }
 
 ;

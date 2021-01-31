@@ -1,10 +1,23 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/baner-img.jpg" alt="")
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+			+b.section-title.text-center.text-xl-start
+				h1 наши базовые лагеря
+				p Описание, инфраструктура и услуги
+			+e.btns-row.row.d-none.d-md-flex
+				.col-auto
+					+e.btn--order(href='#') ОТПРАВИТЬ ЗАПРОС
+				.col-auto.d-none.d-lg-block
+					+e.btn--fb(href='#')
+						img(loading="lazy" src="img/@2x/Facebook-logo.png" alt="")
+			+e.calendar-bl
+				+e.c-icon
+					img(loading="lazy" src="img/@2x/calendar-big.png" alt="")
+				+e.c-txt
+					| Наши лагеря будут открыты
+					br.d-md-none.d-xl-block
+					| с 29 июня по 1 сентября 2021 г.
 	// end headerBlock

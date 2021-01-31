@@ -1,0 +1,81 @@
+mixin sGalery(data)
+	// start sGalery
+	+b.SECTION.sGalery.section#sGalery&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2
+			.row
+	// end sGalery
+
+mixin menuGalerySlider()
+	+b.galerySlider--js
+		+e.head-row.row
+			.col
+				+e.H4.title фотогалерея меню базовых лагерей
+			.col-auto
+				+e.show-all(href='#')
+					span
+						| Показать все
+						|
+					span (48)
+			.col-auto.d-none.d-md-block
+				+e.conrolls
+					+b.galery-prev--js
+						+icon('chevron-left')
+					+b.galery-next--js
+						+icon('chevron-right')
+		+e.slider
+			.swiper-container.galery-slider-js
+				.swiper-wrapper
+					+galerySlide(1, 'menuBase')
+					+galerySlide(2, 'menuBase')
+					+galerySlide(3, 'menuBase')
+					+galerySlide(1, 'menuBase')
+					+galerySlide(2, 'menuBase')
+					+galerySlide(3, 'menuBase')
+			+e.conrolls.d-md-none
+				+b.galery-prev--js
+					+icon('chevron-left')
+				+b.galery-next--js
+					+icon('chevron-right')
+
+
+mixin galerySlide(imgNum, dataFancyBox)
+	.swiper-slide
+		+e.galery-link(href=`img/@2x/galery-img-${imgNum}.png` data-fancybox=dataFancyBox)
+			img(loading="lazy" src=`img/@2x/galery-img-${imgNum}.png` alt="")
+
+mixin videoBaner()
+	+b.videoBaner
+		+e.cont
+			+e.mob-title.d-none
+			+e.video(href='#')
+				img(loading="lazy" src="img/@2x/video-bl-img.jpg" alt="")
+			+e.descr-bl
+				+e.title
+					span.up-case
+						| Инфраструктура Базового Лагеря
+						|
+					span (3600&#160;м)
+				+e.descr
+					| компании
+					|
+					strong Central Asia Travel
+					br
+					|
+					| под пиком Ленина
+					|
+					br
+					span.d-xl-none.d-xxl-block и бесподобные пейзажи Памира
+				+e.btn(href="#") Перейти в видеогалерею »»
+
+mixin formStrip()
+	+b.form-strip
+		+e.row.row
+			+e.sign-col.col-auto
+				img(loading="lazy" src='img/@2x/quest-sign.png' alt="")
+			+e.title-col.col
+				h4 Остались вопросы? Свяжитесь с нами
+				p И наши специалисты подробно на них ответят
+			.col-auto
+				+e.btn(href='#') Задать вопрос
