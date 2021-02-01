@@ -223,7 +223,7 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = '01-1200.png';
+	screenName = '01-480.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -321,7 +321,7 @@ function eventHandler() {
 
 		}
 	}
-	makeDDGroup(['.dd-menu-js']);
+	makeDDGroup(['.dd-menu-js', '.dd-foot-js']);
 
 	//slider in tab
 	let AllSliders = document.querySelectorAll('.galery-slider-js');
@@ -329,7 +329,18 @@ function eventHandler() {
 		let galerySlider = new Swiper(parent, {
 			loop: true,
 			slidesPerView: 'auto',
-			spaceBetween: 5,
+
+			breakpoints: {
+				0 : {
+					spaceBetween: 0,
+				},
+				480 : {
+					spaceBetween: 18,
+				},
+				970 : {
+					spaceBetween: 5,
+				},
+			},
 
 			//lazy load
 			lazy: {

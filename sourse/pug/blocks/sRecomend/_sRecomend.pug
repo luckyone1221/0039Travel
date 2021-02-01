@@ -1,0 +1,52 @@
+mixin sRecomend(data)
+	// start sRecomend
+	+b.SECTION.sRecomend.section#sRecomend&attributes(attributes)
+		+e.bg
+			+e.bg-img
+				img(loading="lazy" src=`img/@2x/footer-img.jpg` alt="")
+		//sRecomended
+		.container.d-none.d-xl-block
+			+b.section-title
+				h2 Рекомендуем посмотреть
+			+e.row.row
+				+recomedItem({
+					imgNum: 1,
+					price: '895 USD',
+					name: 'Курортный Памир',
+					descr: 'Приключенческий тур у подножья пика Ленина',
+				})
+				+recomedItem({
+					imgNum: 2,
+					price: '1215 USD',
+					name: 'Восточный микс',
+					descr: 'Кыргызстан, горы Памира, Узбекистан',
+				})
+				+recomedItem({
+					imgNum: 3,
+					price: '2250 USD',
+					name: 'Восхождение на пик Хан-Тенгри',
+					descr: 'Программы восхождения с Юга и с Севера',
+				})
+		//double of sidebar
+		.container.d-xl-none
+			+b.section-title.text-center
+				h2 Это интересно
+			+b.d-row.row
+				+rightColItem(1, 'col-md-4')
+					| Наши восходители
+				+rightColItem(2, 'col-md-4')
+					| Отзывы о нас
+				+rightColItem(3, 'col-md-4')
+					| Экологическая акция
+	// end sRecomend
+
+
+
+mixin recomedItem(data)
+	.col-12.col-md-4
+		+e.img
+			img(loading="lazy" src=`img/@2x/recomended-${data.imgNum}.jpg` alt="")
+			+e.price=data.price
+		+e.name(href="#")=data.name
+		+e.descr=data.descr
+		+e.more-link(href='#') подробнее...

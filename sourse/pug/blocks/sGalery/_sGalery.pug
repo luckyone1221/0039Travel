@@ -18,7 +18,7 @@ mixin menuGalerySlider()
 						| Показать все
 						|
 					span (48)
-			.col-auto.d-none.d-md-block
+			.col-auto.d-none.d-lg-block
 				+e.conrolls
 					+b.galery-prev--js
 						+icon('chevron-left')
@@ -33,12 +33,11 @@ mixin menuGalerySlider()
 					+galerySlide(1, 'menuBase')
 					+galerySlide(2, 'menuBase')
 					+galerySlide(3, 'menuBase')
-			+e.conrolls.d-md-none
+			+e.conrolls.d-lg-none
 				+b.galery-prev--js
 					+icon('chevron-left')
 				+b.galery-next--js
 					+icon('chevron-right')
-
 
 mixin galerySlide(imgNum, dataFancyBox)
 	.swiper-slide
@@ -48,25 +47,32 @@ mixin galerySlide(imgNum, dataFancyBox)
 mixin videoBaner()
 	+b.videoBaner
 		+e.cont
-			+e.mob-title.d-none
+			+e.mob-title.d-lg-none
+				span.up-case
+					| Инфраструктура Базового Лагеря
+					|
+				span.d-none.d-md-inline (3600 м)
 			+e.video(href='#')
 				img(loading="lazy" src="img/@2x/video-bl-img.jpg" alt="")
 			+e.descr-bl
-				+e.title
+				+e.title.d-none.d-lg-block
 					span.up-case
 						| Инфраструктура Базового Лагеря
 						|
 					span (3600&#160;м)
 				+e.descr
+					.d-inline.d-lg-none
+						| Базовый лагерь 3600 м
+						|
 					| компании
 					|
 					strong Central Asia Travel
-					br
+					br.d-none.d-lg-block
 					|
 					| под пиком Ленина
 					|
-					br
-					span.d-xl-none.d-xxl-block и бесподобные пейзажи Памира
+					br.d-none.d-lg-block
+					span.d-none.d-lg-inline.d-xl-none.d-xxl-inline и бесподобные пейзажи Памира
 				+e.btn(href="#") Перейти в видеогалерею »»
 
 mixin formStrip()
@@ -74,7 +80,7 @@ mixin formStrip()
 		+e.row.row
 			+e.sign-col.col-auto
 				img(loading="lazy" src='img/@2x/quest-sign.png' alt="")
-			+e.title-col.col
+			+e.title-col.col-12.col-lg.col-xl-12.col-xxl
 				h4 Остались вопросы? Свяжитесь с нами
 				p И наши специалисты подробно на них ответят
 			.col-auto

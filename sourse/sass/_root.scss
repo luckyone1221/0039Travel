@@ -21,4 +21,11 @@
 	--swiperBorderColorDefHover: var(--bs-primary);
 	--swiperColorDefHover: var(--bs-primary);
 	--swiperBgDefHover: #ffffff;
+
+
+	--footStick: 220px;
+	@include media-breakpoint-up(xxl){
+		--footStick: 220px;
+	}
+
 }

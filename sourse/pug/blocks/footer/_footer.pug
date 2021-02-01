@@ -1,2 +1,60 @@
 mixin footer()
-	footer.footer
+  +b.FOOTER.footer
+    +e.container.container
+      +e.row.row
+        +e.logo-col.col-3
+          +e.logo(href='#')
+            +e.logo-img
+              img(loading="lazy" src="img/@2x/foot-logo.png" alt="")
+            +e.txt-box
+              +e.name Central Asia Travel
+              +e.txt
+                | Групповые
+                |
+                br.d-none.d-lg-block
+                | и индивидуальные туры
+                br
+                |
+                | по странам Шелкового пути
+        +e.menu-col.col-9
+          +e.menu-row.row.dd-foot-js
+            .col-12.col-md-6.col-lg-4.col-xxl-3
+              +footMenu('Компания', ['О нас', 'Вакансии', 'Акции', 'Отзывы', 'Контакты'])
+            .col-12.col-md-6.col-lg-4.col-xxl-3
+              +footMenu('Медиа', ['Статьи', 'Фотогалерея', 'Видеогалерея'])
+              +footMenu('Туры')(class="d-none d-lg-block d-xxl-none")
+            .col-12.col-md-6.col-lg-4.col-xxl-3.d-lg-none.d-xxl-block
+              +footMenu('Туры')
+            .col-12.col-md-6.col-lg-4.col-xxl-3
+              +footMenu('Направления', ['Узбекистан', 'Кыргызстан', 'Казахстан', 'Туркменистан', 'Таджикистан', 'Азербайджан', 'Китай'])
+        +e.soc-col.col-3.order-last.order-lg-0
+          +e.soc-title Мы в соцсетях
+          //- soc alt
+          +b.soc-row.row.justify-content-center.justify-content-md-start
+            .col-auto
+              +socItemAlt('fb2')
+            .col-auto
+              +socItemAlt('inst2')
+            .col-auto
+              +socItemAlt('tw2')
+            .col-auto
+              +socItemAlt('yt2')
+          //-
+        +e.mail-col.col-9
+          +e.mail-title Подпишитесь на нашу рассылку
+          +form-wrap
+            +input('Введите Ваш E-mail', 'email')
+            +e.BUTTON.btn(type="submit") >
+      +e.copyright.text-center Copyright © 2020 Central Asia Travel
+      //h1 lal lala ala
+
+mixin footMenu(title, elements)
+  +e.menu-cont&attributes(attributes)
+    +e.m-title.dd-head-js.pe-lg-none
+      span=title
+      +e.m-plus.d-lg-none
+        +icon('plus')
+    if elements
+      +e.UL.menu.dd-content-js
+        - for (var i = 0; i < elements.length; i++)
+          +e.LI.menu-item: a(href="#")=elements[i]

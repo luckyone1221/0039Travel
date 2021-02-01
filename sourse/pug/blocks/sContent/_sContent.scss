@@ -5,27 +5,27 @@
 	--sTPB: 30px;
 	@include media-breakpoint-up(sm){
 		--sPT: 22px;
-		--sPB: 30px;
+		--sPB: 48px;
 		--sTPB: 0px;
 	}
 	@include media-breakpoint-up(md){
 		--sPT: 24px;
-		--sPB: 30px;
+		--sPB: 46px;
 		--sTPB: 14px;
 	}
 	@include media-breakpoint-up(lg){
 		--sPT: 25px;
-		--sPB: 30px;
+		--sPB: 70px;
 		--sTPB: 21px;
 	}
 	@include media-breakpoint-up(xl){
 		--sPT: 23px;
-		--sPB: 30px;
+		--sPB: 72px;
 		--sTPB: 14px;
 	}
 	@include media-breakpoint-up(xxl){
 		--sPT: 22px;
-		--sPB: 30px;
+		--sPB: 70px;
 		--sTPB: 17px;
 	}
 
@@ -42,9 +42,6 @@
 		//bp
 		margin-bottom: 50px;
 		@include media-breakpoint-up(md){
-			margin-bottom: 50px;
-		}
-		@include media-breakpoint-up(lg){
 			margin-bottom: 45px;
 		}
 		@include media-breakpoint-up(xl){
@@ -238,7 +235,21 @@
 				width: calc((100% / 3) - (1px * 2 / 3));
 			}
 		}
-		&__{}
+		&__content{
+			padding-bottom: 37px;
+			@include media-breakpoint-up(sm){
+				padding-bottom: 37px;
+			}
+			@include media-breakpoint-up(md){
+				padding-bottom: 48px;
+			}
+			@include media-breakpoint-up(xl){
+				padding-bottom: 51px;
+			}
+			@include media-breakpoint-up(xxl){
+				padding-bottom: 48px;
+			}
+		}
 	}
 
 	&__{}
@@ -365,7 +376,8 @@
 	margin-bottom: 15px;
 
 	&__item{
-		filter: grayscale(1);
+		@include mt();
+		filter: grayscale(100%);
 		&:hover{
 			filter: grayscale(0);
 		}
@@ -378,6 +390,7 @@
 		justify-content: center;
 
 		img{
+			@include mt();
 			width: auto;
 			height: auto;
 			max-width: 100%;
@@ -479,8 +492,15 @@
 
 	//dd
 	&__dd-items{
-		padding-bottom: 82px;
-		@include media-breakpoint-up(xxl){
+
+		padding-bottom: 58px;
+		@include media-breakpoint-up(md){
+			padding-bottom: 58px;
+		}
+		@include media-breakpoint-up(lg){
+			padding-bottom: 58px;
+		}
+		@include media-breakpoint-up(xl){
 			padding-bottom: 82px;
 		}
 	}

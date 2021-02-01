@@ -240,7 +240,7 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = '01-1200.png';
+	screenName = '01-480.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -335,7 +335,7 @@ function eventHandler() {
 		}
 	}
 
-	makeDDGroup(['.dd-menu-js']); //slider in tab
+	makeDDGroup(['.dd-menu-js', '.dd-foot-js']); //slider in tab
 
 	var AllSliders = document.querySelectorAll('.galery-slider-js');
 
@@ -348,7 +348,17 @@ function eventHandler() {
 			var galerySlider = new Swiper(parent, {
 				loop: true,
 				slidesPerView: 'auto',
-				spaceBetween: 5,
+				breakpoints: {
+					0: {
+						spaceBetween: 0
+					},
+					480: {
+						spaceBetween: 18
+					},
+					970: {
+						spaceBetween: 5
+					}
+				},
 				//lazy load
 				lazy: {
 					loadPrevNext: true,

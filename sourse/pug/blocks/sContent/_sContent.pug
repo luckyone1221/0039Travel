@@ -31,7 +31,7 @@ mixin sContent()
 								+lastTabContent()
 					+videoBaner()
 					+formStrip()
-				+e.right-col.col-xl-auto
+				+e.right-col.col-xl-auto.d-none.d-xl-block
 					+rightColCont()
 	// end sContent
 
@@ -41,7 +41,7 @@ mixin socItem(icon)
 
 mixin socItemAlt(imgName)
 	+e.item(href='#')
-		img(loading="lazy" src=`img/@2x/${imgName}` alt="")
+		img(loading="lazy" src=`img/@2x/${imgName}.png` alt="")
 
 mixin rightColCont()
 	+b.inerestingBl
@@ -57,16 +57,16 @@ mixin rightColCont()
 				| «Чистый снег»
 		+b.soc-row.row.justify-content-center.d-none.d-xl-flex
 			.col-auto
-				+socItemAlt('fb2.png')
+				+socItemAlt('fb2')
 			.col-auto
-				+socItemAlt('inst2.png')
+				+socItemAlt('inst2')
 			.col-auto
-				+socItemAlt('tw2.png')
+				+socItemAlt('tw2')
 			.col-auto
-				+socItemAlt('yt2.png')
+				+socItemAlt('yt2')
 
-mixin rightColItem(imgNum)
-	.col-12.col-md-4.col-xl-12
+mixin rightColItem(imgNum, bootClass="")
+	.col-12(class=bootClass)
 		+e.img(href="#")
 			img(loading="lazy" src=`img/@2x/r-col-${imgNum}.jpg`)
 		+e.txt(href='#')

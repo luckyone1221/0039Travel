@@ -6,6 +6,7 @@ $file-format: woff2 woff;
 @include font-face ($default-font, $addr + "SegoeUI-Light/SegoeUI-Light", 300, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "SegoeUI/SegoeUI", 400, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "SegoeUI-SemiBold/SegoeUI-SemiBold", 600, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "SegoeUI-SemiBold/SegoeUI-SemiBold", 700, $file-formats: $file-format);
 
 // font-weight helper:
 
