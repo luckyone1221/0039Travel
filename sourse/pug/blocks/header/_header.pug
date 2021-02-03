@@ -48,16 +48,23 @@ mixin ppGlobMenu()
 	+b.ppMenu.ppMenu-glob.ppMenu-glob-js.active
 		+ppMenuHead()
 		+b.main-menu
-			.container
-				+e.main-nav.row
-					+mainNavItem(1, 'Куда поехать', 'active main-btn-js')(data-menu-id="where")
-					+mainNavItem(2, 'Тип путешествия', 'main-btn-js')(data-menu-id="type")
-					+mainNavItem(3, 'Подбор тура')(href='#')
-					+mainNavItem(4, 'О нас')(href='#')
-					+mainNavItem(5, 'контакты')(href='#')
-					+mainNavItem(6, 'Поиск по сайту','main-btn-js')(data-menu-id="search")
+			+e.container.container
+				+e.main-nav-cont.main-nav-cont-js
+					+e.main-nav.row
+						+mainNavItem(1, 'Куда поехать', 'active main-btn-js')(data-menu-id="where")
+						+mainNavItem(2, 'Тип путешествия', 'main-btn-js')(data-menu-id="type")
+						+mainNavItem(3, 'Подбор тура')(href='#')
+						+mainNavItem(4, 'О нас')(href='#')
+						+mainNavItem(5, 'контакты')(href='#')
+						+mainNavItem(6, 'Поиск по сайту','d-none d-xl-flex main-btn-js')(data-menu-id="search")
+						+mainNavItem(7, 'Русский','d-xl-none')
+					+e.mob-search.d-xl-none
+						+form-wrap
+							+input('', 'text')
+							+e.BUTTON.btn(type="submit")
+							//-
 				+e.mn-dd
-					+e.dd-item.main-dd-js.active(data-menu-id="where")
+					+e.dd-item.main-dd-js(data-menu-id="where")
 						//-where
 						+e.c-row.row
 							+ddCountryItem(1, 'узбекистан')
@@ -87,8 +94,22 @@ mixin ppGlobMenu()
 						+e.c-dd-items
 							+tddItem()(data-type="advanture")
 							+tddItem(1)(data-type="climbing")
-					+e.dd-item.main-dd-js(data-menu-id="search")
-						+e.searh-cont lalalala
+					//-remove active later
+					+e.dd-item--search.active.main-dd-js(data-menu-id="search")
+						+e.searh-cont
+							+form-wrap
+								+input('', 'text')
+								+e.BUTTON.btn(type="submit") >
+							+e.pop-title.text-center Популярные запросы
+							+e.popular-tags.row
+								+popularTag('пик Ленина')
+								+popularTag('УЗБЕКИСТАН')
+								+popularTag('САМАРКАНД')
+								+popularTag('Виза в Узбекистан')
+								+popularTag('Памирский тракт')
+								+popularTag('Джип-туры')
+								+popularTag('Экспедиции')
+								+popularTag('СЕМЕЙНЫЙ ОТДЫХ')
 				+e.footer
 					+e.f-row.row
 						.col
@@ -97,13 +118,22 @@ mixin ppGlobMenu()
 									img(loading="lazy" src="img/@2x/home-icon.png" alt="")
 								span На главную
 						.col-auto
-							+e.lang-row.row
+							+e.soc-row.row.d-xl-none
+								+ppMenuSocItem('fb-sq')
+								+ppMenuSocItem('inst-sq')
+								+ppMenuSocItem('tw-sq')
+								+ppMenuSocItem('yt-sq')
+							+e.lang-row.row.d-none.d-xl-flex
 								+flLink('Русский')(class="active")
 								+flLink('English')
 								+flLink('Español')
 								+flLink('Français')
 								+flLink('Deutsch')
 	//-m-type-pr-1.png
+
+mixin popularTag(txt)
+	+e.p-tag.col-auto
+		a(href='#')=txt
 
 mixin ddTypeItem(imgNum, name)
 	+e.t-type.col-12.col-xl-auto&attributes(attributes)
@@ -185,7 +215,7 @@ mixin ppMenuHead()
 	+e.header&attributes(attributes)
 		.container
 			+e.main-row.row.align-items-center
-				.col-auto.col-lg
+				.col-auto.col-xl
 					+e.close-btn.close-btn-js
 						+icon('cross')
 						span.d-none.d-md-inline Закрыть
@@ -208,7 +238,7 @@ mixin ppMenuHead()
 							+e.l-live.d-none.d-xxl-block
 								img(ading="lazy" src="img/@2x/live-txt.png" alt="")
 					//end logo
-				.col.d-none.d-lg-block
+				.col.d-none.d-xl-block
 					+e.soc-row.row.justify-content-end
 						+ppMenuSocItem('fb-sq')
 						+ppMenuSocItem('inst-sq')

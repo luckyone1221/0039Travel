@@ -417,6 +417,12 @@ function eventHandler() {
 					var allDD = document.querySelectorAll(par.ddClass);
 					var thisId = this.getAttribute(par.attr);
 					var thisDD = document.querySelector("".concat(par.ddClass, "[").concat(par.attr, "=").concat(thisId, "]"));
+					var downXl = window.matchMedia("(max-width: 1200px)").matches; //console.log(downXl);
+
+					if (downXl) {
+						var lvl1Parent = document.querySelector('.main-nav-cont-js');
+						lvl1Parent.classList.add('hidden-mob');
+					}
 
 					var _iterator4 = _createForOfIteratorHelper(allDD),
 							_step4;

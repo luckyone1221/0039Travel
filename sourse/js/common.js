@@ -399,6 +399,13 @@ function eventHandler() {
 				let thisId = this.getAttribute(par.attr);
 				let thisDD = document.querySelector(`${par.ddClass}[${par.attr}=${thisId}]`);
 
+				let downXl = window.matchMedia("(max-width: 1200px)").matches;
+				//console.log(downXl);
+				if (downXl){
+					let lvl1Parent = document.querySelector('.main-nav-cont-js');
+					lvl1Parent.classList.add('hidden-mob');
+				}
+
 				for (let dd of allDD){
 					if (dd === thisDD){
 

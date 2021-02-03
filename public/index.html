@@ -16,7 +16,7 @@
 					<div class="ppMenu__header">
 						<div class="container">
 							<div class="ppMenu__main-row row align-items-center">
-								<div class="col-auto col-lg">
+								<div class="col-auto col-xl">
 									<div class="ppMenu__close-btn close-btn-js">
 										<svg class="icon icon-cross ">
 											<use xlink:href="img/svg/sprite.svg#cross"></use>
@@ -26,7 +26,7 @@
 								<div class="col-auto"><a class="h-logo h-logo--row" href="#"><span class="h-logo__l-img"><img loading="lazy" src="img/@2x/header-logo.png" alt=""/></span><span class="h-logo__l-txt"><span class="h-logo__l-big">Central Asia Travel</span><span class="h-logo__l-descr"><span class="d-inline d-md-none d-xxl-inline">Туры по странам<br class="d-xxl-none"/>Шелкового пути</span><span class="d-none d-md-inline d-xxl-none">групповые и индивидуальные туры<br/>по странам Шелкового пути</span></span><span class="h-logo__l-live d-none d-xxl-block"><img ading="lazy" src="img/@2x/live-txt.png" alt=""/></span></span></a>
 									<!--end logo-->
 								</div>
-								<div class="col d-none d-lg-block">
+								<div class="col d-none d-xl-block">
 									<div class="ppMenu__soc-row row justify-content-end">
 										<div class="col-auto"><a class="ppMenu__soc-item" href="#">
 											<svg class="icon icon-fb-sq ">
@@ -54,29 +54,48 @@
 						</div>
 					</div>
 					<div class="main-menu">
-						<div class="container">
-							<div class="main-menu__main-nav row">
-								<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto active main-btn-js" data-menu-id="where">
-									<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m1.png"/>
+						<div class="main-menu__container container">
+							<div class="main-menu__main-nav-cont main-nav-cont-js">
+								<div class="main-menu__main-nav row">
+									<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto active main-btn-js" data-menu-id="where">
+										<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m1.png"/>
+										</div>
+										<div class="main-menu__txt">Куда поехать
+										</div>
 									</div>
-									<div class="main-menu__txt">Куда поехать
+									<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto main-btn-js" data-menu-id="type">
+										<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m2.png"/>
+										</div>
+										<div class="main-menu__txt">Тип путешествия
+										</div>
+									</div><a class="main-menu__mn-item mn-item-js col-12 col-xl-auto" href="#"><span class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m3.png"/></span><span class="main-menu__txt">Подбор тура</span></a><a class="main-menu__mn-item mn-item-js col-12 col-xl-auto" href="#"><span class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m4.png"/></span><span class="main-menu__txt">О нас</span></a><a class="main-menu__mn-item mn-item-js col-12 col-xl-auto" href="#"><span class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m5.png"/></span><span class="main-menu__txt">контакты</span></a>
+									<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto d-none d-xl-flex main-btn-js" data-menu-id="search">
+										<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m6.png"/>
+										</div>
+										<div class="main-menu__txt">Поиск по сайту
+										</div>
+									</div>
+									<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto d-xl-none">
+										<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m7.png"/>
+										</div>
+										<div class="main-menu__txt">Русский
+										</div>
 									</div>
 								</div>
-								<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto main-btn-js" data-menu-id="type">
-									<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m2.png"/>
-									</div>
-									<div class="main-menu__txt">Тип путешествия
-									</div>
-								</div><a class="main-menu__mn-item mn-item-js col-12 col-xl-auto" href="#"><span class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m3.png"/></span><span class="main-menu__txt">Подбор тура</span></a><a class="main-menu__mn-item mn-item-js col-12 col-xl-auto" href="#"><span class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m4.png"/></span><span class="main-menu__txt">О нас</span></a><a class="main-menu__mn-item mn-item-js col-12 col-xl-auto" href="#"><span class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m5.png"/></span><span class="main-menu__txt">контакты</span></a>
-								<div class="main-menu__mn-item mn-item-js col-12 col-xl-auto main-btn-js" data-menu-id="search">
-									<div class="main-menu__mn-img"><img loading="lazy" src="img/@2x/main-m6.png"/>
-									</div>
-									<div class="main-menu__txt">Поиск по сайту
+								<div class="main-menu__mob-search d-xl-none">
+									<div class="form-wrap">
+										<form>
+											<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder=""/>
+											</div>
+											<!-- +e.input-wrap-->
+											<button class="form-wrap__btn" type="submit">
+											</button>
+										</form>
 									</div>
 								</div>
 							</div>
 							<div class="main-menu__mn-dd">
-								<div class="main-menu__dd-item main-dd-js active" data-menu-id="where">
+								<div class="main-menu__dd-item main-dd-js" data-menu-id="where">
 									<div class="main-menu__c-row row">
 										<div class="main-menu__c-counrty c-country-js col-12 col-xl-auto" data-country="country1">
 											<div class="main-menu__c-img"><img loading="lazy" src="img/@2x/m-where-pr-1.png" alt=""/><img loading="lazy" src="img/@2x/m-where-1.png" alt=""/>
@@ -215,8 +234,37 @@
 										</div>
 									</div>
 								</div>
-								<div class="main-menu__dd-item main-dd-js" data-menu-id="search">
-									<div class="main-menu__searh-cont">lalalala
+								<div class="main-menu__dd-item main-menu__dd-item--search active main-dd-js" data-menu-id="search">
+									<div class="main-menu__searh-cont">
+										<div class="form-wrap">
+											<form>
+												<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder=""/>
+												</div>
+												<!-- +e.input-wrap-->
+												<button class="form-wrap__btn" type="submit">>
+												</button>
+											</form>
+										</div>
+										<div class="main-menu__pop-title text-center">Популярные запросы
+										</div>
+										<div class="main-menu__popular-tags row">
+											<div class="main-menu__p-tag col-auto"><a href="#">пик Ленина</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">УЗБЕКИСТАН</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">САМАРКАНД</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">Виза в Узбекистан</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">Памирский тракт</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">Джип-туры</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">Экспедиции</a>
+											</div>
+											<div class="main-menu__p-tag col-auto"><a href="#">СЕМЕЙНЫЙ ОТДЫХ</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -225,7 +273,29 @@
 									<div class="col"><a class="main-menu__f-home" href="#"><span class="main-menu__fh-img"><img loading="lazy" src="img/@2x/home-icon.png" alt=""/></span><span>На главную</span></a>
 									</div>
 									<div class="col-auto">
-										<div class="main-menu__lang-row row">
+										<div class="main-menu__soc-row row d-xl-none">
+											<div class="col-auto"><a class="main-menu__soc-item" href="#">
+												<svg class="icon icon-fb-sq ">
+													<use xlink:href="img/svg/sprite.svg#fb-sq"></use>
+												</svg></a>
+											</div>
+											<div class="col-auto"><a class="main-menu__soc-item" href="#">
+												<svg class="icon icon-inst-sq ">
+													<use xlink:href="img/svg/sprite.svg#inst-sq"></use>
+												</svg></a>
+											</div>
+											<div class="col-auto"><a class="main-menu__soc-item" href="#">
+												<svg class="icon icon-tw-sq ">
+													<use xlink:href="img/svg/sprite.svg#tw-sq"></use>
+												</svg></a>
+											</div>
+											<div class="col-auto"><a class="main-menu__soc-item" href="#">
+												<svg class="icon icon-yt-sq ">
+													<use xlink:href="img/svg/sprite.svg#yt-sq"></use>
+												</svg></a>
+											</div>
+										</div>
+										<div class="main-menu__lang-row row d-none d-xl-flex">
 											<div class="col-auto"><a class="main-menu__fl-link active" href="#">Русский</a>
 											</div>
 											<div class="col-auto"><a class="main-menu__fl-link" href="#">English</a>
@@ -247,7 +317,7 @@
 					<div class="ppMenu__header d-none d-lg-block">
 						<div class="container">
 							<div class="ppMenu__main-row row align-items-center">
-								<div class="col-auto col-lg">
+								<div class="col-auto col-xl">
 									<div class="ppMenu__close-btn close-btn-js">
 										<svg class="icon icon-cross ">
 											<use xlink:href="img/svg/sprite.svg#cross"></use>
@@ -257,7 +327,7 @@
 								<div class="col-auto"><a class="h-logo h-logo--row" href="#"><span class="h-logo__l-img"><img loading="lazy" src="img/@2x/header-logo.png" alt=""/></span><span class="h-logo__l-txt"><span class="h-logo__l-big">Central Asia Travel</span><span class="h-logo__l-descr"><span class="d-inline d-md-none d-xxl-inline">Туры по странам<br class="d-xxl-none"/>Шелкового пути</span><span class="d-none d-md-inline d-xxl-none">групповые и индивидуальные туры<br/>по странам Шелкового пути</span></span><span class="h-logo__l-live d-none d-xxl-block"><img ading="lazy" src="img/@2x/live-txt.png" alt=""/></span></span></a>
 									<!--end logo-->
 								</div>
-								<div class="col d-none d-lg-block">
+								<div class="col d-none d-xl-block">
 									<div class="ppMenu__soc-row row justify-content-end">
 										<div class="col-auto"><a class="ppMenu__soc-item" href="#">
 											<svg class="icon icon-fb-sq ">
