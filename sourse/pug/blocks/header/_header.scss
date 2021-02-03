@@ -559,6 +559,7 @@
     }
   }
   &__c-img{
+    display: block;
     img:first-child{
       opacity: var(--fImgOp);
 
@@ -684,7 +685,6 @@
     padding: 25px 0;
     border-top: 1px solid darken($gray-550, 1);
 
-
     display: none;
     &.active{
       display: block;
@@ -723,9 +723,68 @@
 
     margin-bottom: -30px;
   }
-  &__{}
-  &__{}
-  &__{}
+
+  //type
+  &__t-row{
+    padding: 20px 0;
+    justify-content: center;
+    @include media-breakpoint-up(xxl){
+      @include roww(80px);
+    }
+
+    & > a{
+      .main-menu__t-name{
+        position: relative;
+
+        &:before{
+          @include media-breakpoint-up(xl){
+            content: '>';
+          }
+          position: absolute;
+          right: calc(100% - 7px);
+          top: 0;
+          color: $primary;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &__t-type{
+    display: block;
+    cursor: pointer;
+
+    color: $gray-750;
+    --fImgOp: 0;
+    --sImgOp: 1;
+    &.active, &:hover{
+      color: $primary;
+      --fImgOp: 1;
+      --sImgOp: 0;
+    }
+
+    --txtAftCont: '·';
+    &:last-child{
+      --txtAftCont: none;
+    }
+  }
+  &__t-name{
+    display: block;
+    color: currentColor;
+    @include media-breakpoint-up(xl){
+      max-width: 150px;
+    }
+
+    position: relative;
+    @include mt();
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    font-size: 15px;
+    letter-spacing: 0.45px;
+    //color: $primary;
+  }
   &__{}
   &__{}
   &__{}

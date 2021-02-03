@@ -388,36 +388,57 @@ function eventHandler() {
 	});
 
 	//where to go
-	//it depends on idex of item so !!important do not remove empty elements
-	$('.c-counrty-js').click(function (){
-		let allCountries = document.querySelectorAll('.c-counrty-js');
-		let allDD = document.querySelectorAll('.c-dd-item-js');
 
-		let thisIndex = $(this).index();
+	function setGroupToggleByParameters(parameters){
+		for (let par of parameters){
 
+			$(par.btnClass).click(function (){
+				let allType = document.querySelectorAll(par.btnClass);
+				let allDD = document.querySelectorAll(par.ddClass);
 
-		for (let [index, dd] of Object.entries(allDD)){
-			if (dd === allDD[thisIndex]){
-				allCountries[index].classList.toggle('active');
-				$(dd).slideToggle(function (){
-					$(this).toggleClass('active');
-				});
-			}
-			else{
-				allCountries[index].classList.remove('active');
-				$(dd).slideUp(function (){
-					$(this).removeClass('active');
-				});
-			}
+				let thisId = this.getAttribute(par.attr);
+				let thisDD = document.querySelector(`${par.ddClass}[${par.attr}=${thisId}]`);
+
+				for (let dd of allDD){
+					if (dd === thisDD){
+
+						this.classList.toggle('active');
+						$(dd).slideToggle(function (){
+							$(this).toggleClass('active');
+						});
+					}
+					else{
+						let currDDId = dd.getAttribute(par.attr);
+						console.log(`${par.btnClass}[${par.attr}=${currDDId}]`);
+						let currType = document.querySelector(`${par.btnClass}[${par.attr}=${currDDId}]`);
+
+						currType.classList.remove('active');
+						$(dd).slideUp(function (){
+							$(this).removeClass('active');
+						});
+					}
+				}
+
+			});
 		}
-
-		//
-	});
-
-
-
-	//
-
+	}
+	setGroupToggleByParameters([
+		{
+			attr: 'data-type',
+			btnClass: '.t-type-js',
+			ddClass: '.t-dd-item-js',
+		},
+		{
+			attr: 'data-country',
+			btnClass: '.c-country-js',
+			ddClass: '.c-dd-item-js',
+		},
+		{
+			attr: 'data-menu-id',
+			btnClass: '.main-btn-js',
+			ddClass: '.main-dd-js',
+		},
+	]);
 
 	//end luckyone js
 

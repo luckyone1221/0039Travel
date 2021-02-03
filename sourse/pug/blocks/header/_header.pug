@@ -50,14 +50,14 @@ mixin ppGlobMenu()
 		+b.main-menu
 			.container
 				+e.main-nav.row
-					+mainNavItem(1, 'Куда поехать', 'active')
-					+mainNavItem(2, 'Тип путешествия')
-					+mainNavItem(3, 'Подбор тура')
-					+mainNavItem(4, 'О нас')
-					+mainNavItem(5, 'контакты')
-					+mainNavItem(6, 'Поиск по сайту')
+					+mainNavItem(1, 'Куда поехать', 'active main-btn-js')(data-menu-id="where")
+					+mainNavItem(2, 'Тип путешествия', 'main-btn-js')(data-menu-id="type")
+					+mainNavItem(3, 'Подбор тура')(href='#')
+					+mainNavItem(4, 'О нас')(href='#')
+					+mainNavItem(5, 'контакты')(href='#')
+					+mainNavItem(6, 'Поиск по сайту','main-btn-js')(data-menu-id="search")
 				+e.mn-dd
-					+e.dd-item.active
+					+e.dd-item.main-dd-js.active(data-menu-id="where")
 						//-where
 						+e.c-row.row
 							+ddCountryItem(1, 'узбекистан')
@@ -68,13 +68,27 @@ mixin ppGlobMenu()
 							+ddCountryItem(6, 'Китай')
 							+ddCountryItem(7, 'Азербайджан')
 						+e.c-dd-items
-							+cddItem()
+							+cddItem(1)
 							+cddItem(2)
 							+cddItem(3)
 							+cddItem(4)
 							+cddItem(5)
 							+cddItem(6)
 							+cddItem(7)
+					+e.dd-item.main-dd-js(data-menu-id="type")
+						+e.t-row.row
+							// >
+							+ddTypeItem(1, 'Экскурсионные туры')(href='#')
+							+ddTypeItem(2, 'тематические туры')(href='#')
+							+ddTypeItem(3, 'праздничные туры')(href='#')
+							+ddTypeItem(4, 'M.I.C.E.')(href='#')
+							+ddTypeItem(5, 'Приключенческие туры')(class="t-type-js" data-type="advanture")
+							+ddTypeItem(6, 'Альпинизм')(class="t-type-js" data-type="climbing")
+						+e.c-dd-items
+							+tddItem()(data-type="advanture")
+							+tddItem(1)(data-type="climbing")
+					+e.dd-item.main-dd-js(data-menu-id="search")
+						+e.searh-cont lalalala
 				+e.footer
 					+e.f-row.row
 						.col
@@ -91,13 +105,41 @@ mixin ppGlobMenu()
 								+flLink('Deutsch')
 	//-m-type-pr-1.png
 
+mixin ddTypeItem(imgNum, name)
+	+e.t-type.col-12.col-xl-auto&attributes(attributes)
+		+e.c-img--type
+			img(loading="lazy" src=`img/@2x/m-type-pr-${imgNum}.png` alt="")
+			img(loading="lazy" src=`img/@2x/m-type-${imgNum}.png` alt="")
+		+e.t-name=name
+
+mixin tddItem(num='')
+	+e.c-dd-item.t-dd-item-js&attributes(attributes)
+		+e.c-dd-row.row
+			.col-auto
+				a(href='#')=`Пик Ленина${num}`
+				a(href='#') Вершины Памира
+				a(href='#') Пик Музтаг-Ата
+			.col-auto
+				a(href='#') Пик Музтаг-Ата + пик Ленина
+				a(href='#') Пик Хан-Тенгри
+				a(href='#') Пик Хан-Тенгри + пик Ленина
+			.col-auto
+				a(href='#') Пик Ленина + пик Хан-Тенгри + пик Победы
+				a(href='#') Пик Победы
+				a(href='#') Пик Коммунизма
+			.col-auto
+				a(href='#') Майская альпиниада в Чимгане
+
 mixin cddItem(num='')
-	+e.c-dd-item.c-dd-item-js&attributes(attributes)
+	+e.c-dd-item.c-dd-item-js&attributes(attributes)(data-country=`country${num}`)
 		+e.c-dd-row.row
 			.col-auto
 				//->
 				a(href='#')
-					strong=`Туры в Узбекистан${num}`
+					if num === 1
+						strong=`Туры в Узбекистан`
+					else
+						strong=`Туры в Узбекистан${num}`
 				a(href='#')
 					strong Достопримечательности
 				a(href='#') Информация об Узбекистане
@@ -120,7 +162,7 @@ mixin flLink(txt)
 		+e.fl-link(href='#')&attributes(attributes)=txt
 
 mixin ddCountryItem(imgNum, name)
-	+e.c-counrty.c-counrty-js.col-12.col-xl-auto
+	+e.c-counrty.c-country-js.col-12.col-xl-auto(data-country=`country${imgNum}`)
 		+e.c-img
 			img(loading="lazy" src=`img/@2x/m-where-pr-${imgNum}.png` alt="")
 			img(loading="lazy" src=`img/@2x/m-where-${imgNum}.png` alt="")
