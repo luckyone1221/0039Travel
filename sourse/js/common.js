@@ -223,27 +223,28 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = '01-1905-i.png';
+	screenName = '01-320.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
 	//when resize
-	let topNav = document.querySelector('.top-nav');
-	let topHeader = document.querySelector("header ");
+	let headerBtns = document.querySelector('.headder-btns-js');
+	let topHeader = document.querySelector("header");
 
 	function whenResize() {
 		let topH = topHeader.offsetHeight;
 
 		if ($(window).scrollTop() > topH) {
-			topNav.classList.add('fixed');
+			headerBtns.classList.add('fixed');
 		} else {
-			topNav.classList.remove('fixed');
+			headerBtns.classList.remove('fixed');
 		}
 
 	}
 
-	if (topNav && topHeader){
+	if (headerBtns && topHeader){
+		window.addEventListener('scroll', whenResize, { passive: true });
 		window.addEventListener('resize', whenResize, { passive: true });
 
 		whenResize();
@@ -356,19 +357,66 @@ function eventHandler() {
 		});
 	}
 
-	// let activeTabIndex = $('.sAgencyPractice__tabs-bar-item.active').index();
-	// $('.sAgencyPractice__tabs-bar-item').click(function () {
-	// 	if (this.classList.contains('active')) return
-	//
-	// 	activeTabIndex = $(this).index();
-	// 	let thisSwiper = AllParents[activeTabIndex].querySelector('.agency-practice-sw-cont-js');
-	//
-	// 	window.setTimeout(function () {
-	// 		thisSwiper.swiper.update();
-	// 	}, 50);
-	// });
+	let activeTabIndex = $('.sContent .tabs__content.active').index();
+	$('.sContent .tabs__btn').click(function () {
+		if (this.classList.contains('active')) return
 
-	//.galery-slider-js
+		activeTabIndex = $(this).index();
+		let thisSwiper = AllSliders[activeTabIndex];
+
+		window.setTimeout(function () {
+			thisSwiper.swiper.update();
+		}, 50);
+	});
+
+	//menu js
+
+	//this
+	$('.this-btn-js').click(function (){
+		$('.ppMenu-this-js').fadeIn();
+	});
+	$('.ppMenu-this-js .close-btn-js').click(function (){
+		$('.ppMenu-this-js').fadeOut();
+	});
+
+	//glob
+	$('.menu-btn-js').click(function (){
+		$('.ppMenu-glob-js').fadeIn();
+	});
+	$('.ppMenu-glob-js .close-btn-js').click(function (){
+		$('.ppMenu-glob-js').fadeOut();
+	});
+
+	//where to go
+	//it depends on idex of item so !!important do not remove empty elements
+	$('.c-counrty-js').click(function (){
+		let allCountries = document.querySelectorAll('.c-counrty-js');
+		let allDD = document.querySelectorAll('.c-dd-item-js');
+
+		let thisIndex = $(this).index();
+
+
+		for (let [index, dd] of Object.entries(allDD)){
+			if (dd === allDD[thisIndex]){
+				allCountries[index].classList.toggle('active');
+				$(dd).slideToggle(function (){
+					$(this).toggleClass('active');
+				});
+			}
+			else{
+				allCountries[index].classList.remove('active');
+				$(dd).slideUp(function (){
+					$(this).removeClass('active');
+				});
+			}
+		}
+
+		//
+	});
+
+
+
+	//
 
 
 	//end luckyone js

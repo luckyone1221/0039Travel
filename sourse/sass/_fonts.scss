@@ -3,6 +3,9 @@ $default-font: "roboto";
 $addr: '../fonts/';
 $file-format: woff2 woff;
 
+$mono: 'AvalonMedium';
+@include font-face ($mono, $addr + "AvalonMedium/AvalonMedium", 500, $file-formats: $file-format);
+
 @include font-face ($default-font, $addr + "SegoeUI-Light/SegoeUI-Light", 300, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "SegoeUI/SegoeUI", 400, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "SegoeUI-SemiBold/SegoeUI-SemiBold", 600, $file-formats: $file-format);

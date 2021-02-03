@@ -1,5 +1,179 @@
 mixin header()
 	// start header
 	+b.HEADER.header#header&attributes(attributes)
-		block
+		+e.cont
+			+e.btns.headder-btns-js
+				+e.menu-btn.menu-btn-js(title="Главное меню")
+					span
+					+e.menu-txt МЕНЮ
+				+e.this-menu-btn.this-btn-js(title="Навигация по разделу")
+					span
+			//-logo
+			+b.h-logo(href='#')
+				+e.l-img
+					img(loading="lazy" src='img/@2x/header-logo.png' alt="")
+				+e.l-txt.text-center.text-sm-start
+					+e.l-big Central Asia Travel
+					+e.l-descr
+						span.d-inline.d-md-none.d-xxl-inline
+							| Туры по странам
+							br.d-xxl-none
+							| Шелкового пути
+						span.d-none.d-md-inline.d-xxl-none
+							| групповые и индивидуальные туры
+							br
+							| по странам Шелкового пути
+					+e.l-live.d-none.d-xxl-block
+						img(loading="lazy" src="img/@2x/live-txt.png" alt="")
+			//-end logo
+			+e.search
+				img(loading="lazy" src="img/@2x/search-sm.png" alt="")
 	// end header
+
+mixin ppThisMenu()
+	+b.ppMenu.ppMenu-this.ppMenu-this-js
+		+ppMenuHead()(class="d-none d-lg-block")
+		+b.this-mm
+			.container
+				+e.title.text-center.d-none.d-lg-block НАВИГАЦИЯ по разделу
+				+e.row.row.justify-content-between
+					+thisMMDtItem(1, 'даты и цены')
+					+thisMMDtItem(2, 'базовые лагеря')
+					+thisMMDtItem(3, 'полезная информация')
+					+thisMMDtItem(4, 'безопасность')
+					+thisMMDtItem(5, 'рекомендации')
+					+thisMMDtItem(6, 'написать нам')(class="d-lg-none")
+
+mixin ppGlobMenu()
+	+b.ppMenu.ppMenu-glob.ppMenu-glob-js.active
+		+ppMenuHead()
+		+b.main-menu
+			.container
+				+e.main-nav.row
+					+mainNavItem(1, 'Куда поехать', 'active')
+					+mainNavItem(2, 'Тип путешествия')
+					+mainNavItem(3, 'Подбор тура')
+					+mainNavItem(4, 'О нас')
+					+mainNavItem(5, 'контакты')
+					+mainNavItem(6, 'Поиск по сайту')
+				+e.mn-dd
+					+e.dd-item.active
+						//-where
+						+e.c-row.row
+							+ddCountryItem(1, 'узбекистан')
+							+ddCountryItem(2, 'Кыргызстан')
+							+ddCountryItem(3, 'Казахстан')
+							+ddCountryItem(4, 'Таджикистан')
+							+ddCountryItem(5, 'Туркменистан')
+							+ddCountryItem(6, 'Китай')
+							+ddCountryItem(7, 'Азербайджан')
+						+e.c-dd-items
+							+cddItem()
+							+cddItem(2)
+							+cddItem(3)
+							+cddItem(4)
+							+cddItem(5)
+							+cddItem(6)
+							+cddItem(7)
+				+e.footer
+					+e.f-row.row
+						.col
+							+e.f-home(href='#')
+								+e.fh-img
+									img(loading="lazy" src="img/@2x/home-icon.png" alt="")
+								span На главную
+						.col-auto
+							+e.lang-row.row
+								+flLink('Русский')(class="active")
+								+flLink('English')
+								+flLink('Español')
+								+flLink('Français')
+								+flLink('Deutsch')
+	//-m-type-pr-1.png
+
+mixin cddItem(num='')
+	+e.c-dd-item.c-dd-item-js&attributes(attributes)
+		+e.c-dd-row.row
+			.col-auto
+				//->
+				a(href='#')
+					strong=`Туры в Узбекистан${num}`
+				a(href='#')
+					strong Достопримечательности
+				a(href='#') Информация об Узбекистане
+				a(href='#') Виза в Узбекистан
+			.col-auto
+				a(href="#")
+					strong Гостиницы Узбекистана
+				a(href="#") Конференц-залы
+				a(href="#") Рестораны
+			.col-auto
+				a(href="#")
+					strong Транспортные услуги
+				a(href="#") Бронирование авиабилетов
+			.col-auto
+				a(href="#") Узбекская кухня
+				a(href="#") Фото Узбекистана
+
+mixin flLink(txt)
+	.col-auto
+		+e.fl-link(href='#')&attributes(attributes)=txt
+
+mixin ddCountryItem(imgNum, name)
+	+e.c-counrty.c-counrty-js.col-12.col-xl-auto
+		+e.c-img
+			img(loading="lazy" src=`img/@2x/m-where-pr-${imgNum}.png` alt="")
+			img(loading="lazy" src=`img/@2x/m-where-${imgNum}.png` alt="")
+		+e.c-name=name
+
+mixin mainNavItem(imgNum, txt, addClasses)
+	+e.mn-item.mn-item-js.col-12.col-xl-auto(class=addClasses)&attributes(attributes)
+		+e.mn-img
+			img(loading="lazy" src=`img/@2x/main-m${imgNum}.png`)
+		+e.txt=txt
+
+mixin thisMMDtItem(imgNum, txt)
+	.col-auto&attributes(attributes)
+		+e.item(href="#")
+			+e.icon
+				img(loading="lazy" src=`img/@2x/this-m-${imgNum}.png` alt="")
+			.txt.d-none.d-lg-block=txt
+
+mixin ppMenuHead()
+	+e.header&attributes(attributes)
+		.container
+			+e.main-row.row.align-items-center
+				.col-auto.col-lg
+					+e.close-btn.close-btn-js
+						+icon('cross')
+						span.d-none.d-md-inline Закрыть
+				.col-auto
+					//-logo
+					+b.h-logo--row(href='#')
+						+e.l-img
+							img(loading="lazy" src='img/@2x/header-logo.png' alt="")
+						+e.l-txt
+							+e.l-big Central Asia Travel
+							+e.l-descr
+								span.d-inline.d-md-none.d-xxl-inline
+									| Туры по странам
+									br.d-xxl-none
+									| Шелкового пути
+								span.d-none.d-md-inline.d-xxl-none
+									| групповые и индивидуальные туры
+									br
+									| по странам Шелкового пути
+							+e.l-live.d-none.d-xxl-block
+								img(ading="lazy" src="img/@2x/live-txt.png" alt="")
+					//end logo
+				.col.d-none.d-lg-block
+					+e.soc-row.row.justify-content-end
+						+ppMenuSocItem('fb-sq')
+						+ppMenuSocItem('inst-sq')
+						+ppMenuSocItem('tw-sq')
+						+ppMenuSocItem('yt-sq')
+
+mixin ppMenuSocItem(iconName)
+	.col-auto
+		+e.soc-item(href="#")
+			+icon(iconName)

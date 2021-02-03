@@ -82,6 +82,17 @@ body {
 			opacity: 0.76;
 		}
 	}
+
+	&.fixed2 {
+		@include media-breakpoint-down(xl){
+			overflow: hidden;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 999;
+		}
+	}
 }
 
 // .main-wrapper { 
