@@ -21,3 +21,37 @@ mixin headerBlock()
 					br.d-md-none.d-xl-block
 					| с 29 июня по 1 сентября 2021 г.
 	// end headerBlock
+
+mixin headerBlockMain()
+	// start headerBlock
+	+b.headerBlock--long.section#headerBlock&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/baner-main.jpg" alt="")
+		.container
+			+b.section-title.text-center.text-xl-start
+				h1 пик ленина
+				p
+					| Восхождения · Треккинг ·
+					br.d-lg-none
+					| Отдых на Памире
+			+e.btns-row--alt.row
+				.col-auto
+					+e.btn--order(href='#') ОТПРАВИТЬ ЗАПРОС
+				.col-auto.d-none.d-md-block
+					+e.btn--fb(href='#')
+						img(loading="lazy" src="img/@2x/Facebook-logo.png" alt="")
+				.col.d-xl-block.d-none
+					+e.calendar-bl
+						+e.c-icon
+							img(loading="lazy" src="img/@2x/calendar-big.png" alt="")
+						+e.c-txt
+							| Наши лагеря будут открыты
+							br.d-md-none.d-xl-block
+							| с 29 июня по 1 сентября 2021 г.
+			+e.calendar-bl.d-xl-none
+				+e.c-icon
+					img(loading="lazy" src="img/@2x/calendar-big.png" alt="")
+				+e.c-txt
+					| Наши лагеря будут открыты
+					br.d-lg-none.d-xl-block
+					| с 29 июня по 1 сентября 2021 г.

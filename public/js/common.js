@@ -240,7 +240,7 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = '01-320.png';
+	screenName = '02-1905.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -400,9 +400,11 @@ function eventHandler() {
 
 	$('.menu-btn-js').click(function () {
 		$('.ppMenu-glob-js').fadeIn();
+		$('body').addClass('fixed2');
 	});
 	$('.ppMenu-glob-js .close-btn-js').click(function () {
 		$('.ppMenu-glob-js').fadeOut();
+		$('body').removeClass('fixed2');
 	}); //where to go
 
 	function setGroupToggleByParameters(parameters) {
@@ -416,13 +418,16 @@ function eventHandler() {
 					var allType = document.querySelectorAll(par.btnClass);
 					var allDD = document.querySelectorAll(par.ddClass);
 					var thisId = this.getAttribute(par.attr);
-					var thisDD = document.querySelector("".concat(par.ddClass, "[").concat(par.attr, "=").concat(thisId, "]"));
-					var downXl = window.matchMedia("(max-width: 1200px)").matches; //console.log(downXl);
+					var thisDDs = document.querySelectorAll("".concat(par.ddClass, "[").concat(par.attr, "=").concat(thisId, "]")); //mob js
+					//let downXl = window.matchMedia("(max-width: 1200px)").matches;
 
-					if (downXl) {
-						var lvl1Parent = document.querySelector('.main-nav-cont-js');
-						lvl1Parent.classList.add('hidden-mob');
-					}
+					var lvl1Parent = document.querySelector('.main-nav-cont-js');
+					lvl1Parent.classList.add('hidden-mob');
+					$('.back-mob-js').addClass('active'); //
+
+					var foundThisFlag; //flag we need to prevent double toggle ==> this.classList.toggle('active');
+					//thisDDs there can be 2 or less items selected as thisDDs
+					//if u neen more upgrage if condition inside  //for (let dd of allDD)
 
 					var _iterator4 = _createForOfIteratorHelper(allDD),
 							_step4;
@@ -431,14 +436,17 @@ function eventHandler() {
 						for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
 							var dd = _step4.value;
 
-							if (dd === thisDD) {
-								this.classList.toggle('active');
+							if (dd === thisDDs[0] || dd === thisDDs[1]) {
+								if (!foundThisFlag) {
+									foundThisFlag = true;
+									this.classList.toggle('active');
+								}
+
 								$(dd).slideToggle(function () {
 									$(this).toggleClass('active');
 								});
 							} else {
 								var currDDId = dd.getAttribute(par.attr);
-								console.log("".concat(par.btnClass, "[").concat(par.attr, "=").concat(currDDId, "]"));
 								var currType = document.querySelector("".concat(par.btnClass, "[").concat(par.attr, "=").concat(currDDId, "]"));
 								currType.classList.remove('active');
 								$(dd).slideUp(function () {
@@ -462,8 +470,17 @@ function eventHandler() {
 		} finally {
 			_iterator3.f();
 		}
-	}
+	} //go back mob
 
+
+	$('.back-mob-js').click(function () {
+		$(this).removeClass('active');
+		$('.main-dd-js').slideUp(function () {
+			$(this).removeClass('active');
+		});
+		var lvl1Parent = document.querySelector('.main-nav-cont-js');
+		lvl1Parent.classList.remove('hidden-mob');
+	});
 	setGroupToggleByParameters([{
 		attr: 'data-type',
 		btnClass: '.t-type-js',

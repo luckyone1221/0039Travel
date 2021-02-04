@@ -6,7 +6,7 @@ mixin header()
 				+e.menu-btn.menu-btn-js(title="Главное меню")
 					span
 					+e.menu-txt МЕНЮ
-				+e.this-menu-btn.this-btn-js(title="Навигация по разделу")
+				+e.this-menu-btn.this-btn-js.d-none.d-xl-flex(title="Навигация по разделу")
 					span
 			//-logo
 			+b.h-logo(href='#')
@@ -32,21 +32,23 @@ mixin header()
 
 mixin ppThisMenu()
 	+b.ppMenu.ppMenu-this.ppMenu-this-js
-		+ppMenuHead()(class="d-none d-lg-block")
+		+ppMenuHead()(class="d-none d-xl-block")
 		+b.this-mm
 			.container
-				+e.title.text-center.d-none.d-lg-block НАВИГАЦИЯ по разделу
+				+e.title.text-center.d-none.d-xl-block НАВИГАЦИЯ по разделу
 				+e.row.row.justify-content-between
 					+thisMMDtItem(1, 'даты и цены')
 					+thisMMDtItem(2, 'базовые лагеря')
 					+thisMMDtItem(3, 'полезная информация')
 					+thisMMDtItem(4, 'безопасность')
 					+thisMMDtItem(5, 'рекомендации')
-					+thisMMDtItem(6, 'написать нам')(class="d-lg-none")
+					+thisMMDtItem(6, 'написать нам')(class="d-xl-none")
 
 mixin ppGlobMenu()
-	+b.ppMenu.ppMenu-glob.ppMenu-glob-js.active
+	+b.ppMenu.ppMenu-glob.ppMenu-glob-js
 		+ppMenuHead()
+			+e.back-btn.back-mob-js
+				+icon('arrow-left')
 		+b.main-menu
 			+e.container.container
 				+e.main-nav-cont.main-nav-cont-js
@@ -57,7 +59,7 @@ mixin ppGlobMenu()
 						+mainNavItem(4, 'О нас')(href='#')
 						+mainNavItem(5, 'контакты')(href='#')
 						+mainNavItem(6, 'Поиск по сайту','d-none d-xl-flex main-btn-js')(data-menu-id="search")
-						+mainNavItem(7, 'Русский','d-xl-none')
+						+mainNavItem(7, 'Русский','d-xl-none main-btn-js')(data-menu-id="language")
 					+e.mob-search.d-xl-none
 						+form-wrap
 							+input('', 'text')
@@ -68,13 +70,20 @@ mixin ppGlobMenu()
 						//-where
 						+e.c-row.row
 							+ddCountryItem(1, 'узбекистан')
+							+cddItemMob(1)
 							+ddCountryItem(2, 'Кыргызстан')
+							+cddItemMob(2)
 							+ddCountryItem(3, 'Казахстан')
+							+cddItemMob(3)
 							+ddCountryItem(4, 'Таджикистан')
+							+cddItemMob(4)
 							+ddCountryItem(5, 'Туркменистан')
+							+cddItemMob(5)
 							+ddCountryItem(6, 'Китай')
+							+cddItemMob(6)
 							+ddCountryItem(7, 'Азербайджан')
-						+e.c-dd-items
+							+cddItemMob(7)
+						+e.c-dd-items.d-none.d-xl-block
 							+cddItem(1)
 							+cddItem(2)
 							+cddItem(3)
@@ -84,14 +93,15 @@ mixin ppGlobMenu()
 							+cddItem(7)
 					+e.dd-item.main-dd-js(data-menu-id="type")
 						+e.t-row.row
-							// >
 							+ddTypeItem(1, 'Экскурсионные туры')(href='#')
 							+ddTypeItem(2, 'тематические туры')(href='#')
 							+ddTypeItem(3, 'праздничные туры')(href='#')
 							+ddTypeItem(4, 'M.I.C.E.')(href='#')
 							+ddTypeItem(5, 'Приключенческие туры')(class="t-type-js" data-type="advanture")
+							+tddItemMob()(data-type="advanture")
 							+ddTypeItem(6, 'Альпинизм')(class="t-type-js" data-type="climbing")
-						+e.c-dd-items
+							+tddItemMob(1)(data-type="climbing")
+						+e.c-dd-items.d-xl-block.d-none
 							+tddItem()(data-type="advanture")
 							+tddItem(1)(data-type="climbing")
 					//-remove active later
@@ -110,6 +120,9 @@ mixin ppGlobMenu()
 								+popularTag('Джип-туры')
 								+popularTag('Экспедиции')
 								+popularTag('СЕМЕЙНЫЙ ОТДЫХ')
+					+e.dd-item.main-dd-js.d-xl-none(data-menu-id="language")
+						+e.mob-langitems
+
 				+e.footer
 					+e.f-row.row
 						.col
@@ -160,6 +173,19 @@ mixin tddItem(num='')
 			.col-auto
 				a(href='#') Майская альпиниада в Чимгане
 
+mixin tddItemMob(num='')
+	+e.type-mob.t-dd-item-js.d-xl-none&attributes(attributes)
+		a(href='#')=`Пик Ленина${num}`
+		a(href='#') Вершины Памира
+		a(href='#') Пик Музтаг-Ата
+		a(href='#') Пик Музтаг-Ата + пик Ленина
+		a(href='#') Пик Хан-Тенгри
+		a(href='#') Пик Хан-Тенгри + пик Ленина
+		a(href='#') Пик Ленина + пик Хан-Тенгри + пик Победы
+		a(href='#') Пик Победы
+		a(href='#') Пик Коммунизма
+		a(href='#') Майская альпиниада в Чимгане
+
 mixin cddItem(num='')
 	+e.c-dd-item.c-dd-item-js&attributes(attributes)(data-country=`country${num}`)
 		+e.c-dd-row.row
@@ -187,6 +213,20 @@ mixin cddItem(num='')
 				a(href="#") Узбекская кухня
 				a(href="#") Фото Узбекистана
 
+mixin cddItemMob(num='')
+	+e.type-mob.c-dd-item-js.d-xl-none&attributes(attributes)(data-country=`country${num}`)
+		a(href='#') Туры в Узбекистан
+		a(href='#') Достопримечательности
+		a(href='#') Информация об Узбекистане
+		a(href='#') Виза в Узбекистан
+		a(href="#") Гостиницы Узбекистана
+		a(href="#") Конференц-залы
+		a(href="#") Рестораны
+		a(href="#") Транспортные услуги
+		a(href="#") Бронирование авиабилетов
+		a(href="#") Узбекская кухня
+		a(href="#") Фото Узбекистана
+
 mixin flLink(txt)
 	.col-auto
 		+e.fl-link(href='#')&attributes(attributes)=txt
@@ -209,16 +249,17 @@ mixin thisMMDtItem(imgNum, txt)
 		+e.item(href="#")
 			+e.icon
 				img(loading="lazy" src=`img/@2x/this-m-${imgNum}.png` alt="")
-			.txt.d-none.d-lg-block=txt
+			.txt.d-none.d-xl-block=txt
 
 mixin ppMenuHead()
 	+e.header&attributes(attributes)
 		.container
 			+e.main-row.row.align-items-center
-				.col-auto.col-xl
+				+e.btns-col.col-auto.col-xl
 					+e.close-btn.close-btn-js
 						+icon('cross')
-						span.d-none.d-md-inline Закрыть
+						span.d-none.d-xl-inline Закрыть
+					block
 				.col-auto
 					//-logo
 					+b.h-logo--row(href='#')

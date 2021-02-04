@@ -223,7 +223,7 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = '01-320.png';
+	screenName = '02-1905.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -382,9 +382,11 @@ function eventHandler() {
 	//glob
 	$('.menu-btn-js').click(function (){
 		$('.ppMenu-glob-js').fadeIn();
+		$('body').addClass('fixed2');
 	});
 	$('.ppMenu-glob-js .close-btn-js').click(function (){
 		$('.ppMenu-glob-js').fadeOut();
+		$('body').removeClass('fixed2');
 	});
 
 	//where to go
@@ -397,26 +399,34 @@ function eventHandler() {
 				let allDD = document.querySelectorAll(par.ddClass);
 
 				let thisId = this.getAttribute(par.attr);
-				let thisDD = document.querySelector(`${par.ddClass}[${par.attr}=${thisId}]`);
+				let thisDDs = document.querySelectorAll(`${par.ddClass}[${par.attr}=${thisId}]`);
 
-				let downXl = window.matchMedia("(max-width: 1200px)").matches;
-				//console.log(downXl);
-				if (downXl){
-					let lvl1Parent = document.querySelector('.main-nav-cont-js');
-					lvl1Parent.classList.add('hidden-mob');
-				}
+				//mob js
+				//let downXl = window.matchMedia("(max-width: 1200px)").matches;
+				let lvl1Parent = document.querySelector('.main-nav-cont-js');
+				lvl1Parent.classList.add('hidden-mob');
 
+				$('.back-mob-js').addClass('active');
+				//
+
+				let foundThisFlag;
+				//flag we need to prevent double toggle ==> this.classList.toggle('active');
+				//thisDDs there can be 2 or less items selected as thisDDs
+				//if u neen more upgrage if condition inside  //for (let dd of allDD)
 				for (let dd of allDD){
-					if (dd === thisDD){
+					if (dd === thisDDs[0] || dd === thisDDs[1]){
 
-						this.classList.toggle('active');
+						if (!foundThisFlag){
+							foundThisFlag = true;
+							this.classList.toggle('active');
+						}
+
 						$(dd).slideToggle(function (){
 							$(this).toggleClass('active');
 						});
 					}
 					else{
 						let currDDId = dd.getAttribute(par.attr);
-						console.log(`${par.btnClass}[${par.attr}=${currDDId}]`);
 						let currType = document.querySelector(`${par.btnClass}[${par.attr}=${currDDId}]`);
 
 						currType.classList.remove('active');
@@ -429,6 +439,20 @@ function eventHandler() {
 			});
 		}
 	}
+
+	//go back mob
+	$('.back-mob-js').click(function (){
+		$(this).removeClass('active');
+
+		$('.main-dd-js').slideUp(function (){
+			$(this).removeClass('active');
+		});
+
+		let lvl1Parent = document.querySelector('.main-nav-cont-js');
+		lvl1Parent.classList.remove('hidden-mob');
+
+	});
+
 	setGroupToggleByParameters([
 		{
 			attr: 'data-type',
