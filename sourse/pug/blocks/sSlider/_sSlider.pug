@@ -3,7 +3,7 @@ mixin sSlider(data)
 	+b.SECTION.sSlider#sSlider&attributes(attributes)
 		+e.container.container
 			+e.slider
-				.swiper-container
+				.swiper-container.baner-slider-js
 					.swiper-wrapper
 						+sSlierSl()
 						+sSlierSl('blue')
@@ -26,8 +26,9 @@ mixin sSlierSl(color="#e8aa3b")
 						| Приключенческий тур с треккингом
 					+e.sm
 						| Кыргызстан, горы Памира
+						br.d-none.d-lg-block
 						| 8 дней / 7 ночей
-				+e.btn(href='#') Подробнее »»
-			+e.img-col.col-12.col-lg-6
+					+e.btn(href='#') Подробнее »»
+			+e.img-col.col-12.col-lg-6.d-none.d-lg-block
 				+e.img
 					img.swiper-lazy(src="#" data-src="img/@2x/sSlider-img.png" alt="")

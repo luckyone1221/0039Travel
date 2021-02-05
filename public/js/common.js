@@ -321,7 +321,7 @@ function eventHandler() {
 										$(this).toggleClass('active');
 									});
 								} else {
-									$(this.parentElement).toggleClass('active');
+									$(this.parentElement).removeClass('active');
 									$(this.parentElement).find('.dd-content-js').slideUp(function () {
 										$(this).removeClass('active');
 									});
@@ -348,7 +348,8 @@ function eventHandler() {
 	try {
 		for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
 			var parent = _step2.value;
-			var galerySlider = new Swiper(parent, {
+
+			var _galerySlider = new Swiper(parent, {
 				loop: true,
 				slidesPerView: 'auto',
 				breakpoints: {
@@ -419,7 +420,6 @@ function eventHandler() {
 					var allDD = document.querySelectorAll(par.ddClass);
 					var thisId = this.getAttribute(par.attr);
 					var thisDDs = document.querySelectorAll("".concat(par.ddClass, "[").concat(par.attr, "=").concat(thisId, "]")); //mob js
-					//let downXl = window.matchMedia("(max-width: 1200px)").matches;
 
 					var lvl1Parent = document.querySelector('.main-nav-cont-js');
 					lvl1Parent.classList.add('hidden-mob');
@@ -470,8 +470,21 @@ function eventHandler() {
 		} finally {
 			_iterator3.f();
 		}
-	} //go back mob
+	}
 
+	function fixMenu() {
+		var downXl = window.matchMedia("(max-width: 1200px)").matches;
+
+		if (downXl) {
+			$('.main-btn-js').removeClass('active');
+			$('.main-dd-js').removeClass('active');
+		}
+	}
+
+	window.addEventListener('resize', fixMenu, {
+		passive: true
+	});
+	fixMenu(); //go back mob
 
 	$('.back-mob-js').click(function () {
 		$(this).removeClass('active');
@@ -493,7 +506,22 @@ function eventHandler() {
 		attr: 'data-menu-id',
 		btnClass: '.main-btn-js',
 		ddClass: '.main-dd-js'
-	}]); //end luckyone js
+	}]); //
+
+	var galerySlider = new Swiper('.baner-slider-js', {
+		loop: true,
+		slidesPerView: 'auto',
+		//lazy load
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		//nav
+		navigation: {
+			nextEl: $(this).find('.slider-next--js'),
+			prevEl: $(this).find('.slider-prev--js')
+		}
+	}); //end luckyone js
 }
 
 ;
