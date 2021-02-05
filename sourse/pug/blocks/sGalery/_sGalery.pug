@@ -52,7 +52,7 @@ mixin videoBaner()
 					| Инфраструктура Базового Лагеря
 					|
 				span.d-none.d-md-inline (3600 м)
-			+e.video(href='#')
+			+b.video-fr(href='#')
 				img(loading="lazy" src="img/@2x/video-bl-img.jpg" alt="")
 			+e.descr-bl
 				+e.title.d-none.d-lg-block
@@ -81,6 +81,17 @@ mixin formStrip()
 			+e.sign-col.col-auto
 				img(loading="lazy" src='img/@2x/quest-sign.png' alt="")
 			+e.title-col.col-12.col-lg.col-xl-12.col-xxl
+				h4 Остались вопросы? Свяжитесь с нами
+				p И наши специалисты подробно на них ответят
+			.col-auto
+				+e.btn(href='#') Задать вопрос
+
+mixin formStrip2()
+	+b.form-strip--alt
+		+e.row.row.align-items-start
+			+e.sign-col.col-auto
+				img(loading="lazy" src='img/@2x/quest-sign.png' alt="")
+			+e.title-col.col-12.col-lg
 				h4 Остались вопросы? Свяжитесь с нами
 				p И наши специалисты подробно на них ответят
 			.col-auto

@@ -1,0 +1,64 @@
+mixin sPrice(data)
+	// start sPrice
+	+b.SECTION.sPrice.section#sPrice&attributes(attributes)
+		.container
+			+b.section-title.text-center.text-xl-start
+				h2 ЦЕНОВЫЕ ПАКЕТЫ
+				p для программы восхождения на пик Ленина
+			+e.txt
+				p
+					| Здесь вы можете выбрать один из
+					strong 12 ценовых пакетов
+					|, которые различаются по набору включенных услуг и, соответственно, по стоимости – от самого
+					strong
+						| бюджетного
+						|
+					br.d-md-none
+					a(href="#")
+						strong
+							| Супер Эконом
+							|
+					|
+					| варианта до наиболее
+					|
+					strong
+						| комфортного
+						|
+					a(href="#")
+						strong VIP-пакета.
+				p
+					| Каждый сможет подобрать для себя
+					br.d-md-none
+					| оптимальный формат путешествия!
+		+e.row.row
+			+sPriceItem(1, 'Бизнес', '1000 USD')
+			+sPriceItem(2, 'Бизнес плюс', '1200 USD')
+			+sPriceItem(3, 'групповой', '1800 USD')
+			+sPriceItem(4, '2 вершины памира', '630 USD')
+			+sPriceItem(5, '3 вершины памира', '985 USD')
+			+sPriceItem(6, '4 вершины памира', '1965 USD')
+			+sPriceItem(7, 'VIP', '6890 USD')
+			+sPriceItem(8, 'с кислородом', '6150 USD')
+			+sPriceItem(9, 'бизнес малый', '700 USD')
+			+sPriceItem(10, 'эконом', '400 USD')
+			+sPriceItem(11, 'супер-эконом', '200 USD')
+			+sPriceItem(12, 'Курортный Памир', '695 USD')
+	// end sPrice
+
+mixin sPriceItem(imgNum, nameTxt, price)
+	+e.col.col-12.col-md-6.col-xl-4
+		+e.img
+			img(loading="lazy" src=`img/@2x/sPrice-row-${imgNum}.jpg` alt="")
+		+e.content
+			+e.face
+				+e.name=nameTxt
+				+e.price=price
+			+e.link(href='#')
+				| Перейти
+				br.d-lg-none
+				| к программе »»
+			+e.nav-btns
+				+e.nav-btn(href='#')
+					+icon('eye')
+				+e.nav-btn(href='#')
+					+icon('compare')

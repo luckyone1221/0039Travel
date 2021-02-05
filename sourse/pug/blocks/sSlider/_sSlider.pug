@@ -1,0 +1,33 @@
+mixin sSlider(data)
+	// start sSlider
+	+b.SECTION.sSlider#sSlider&attributes(attributes)
+		+e.container.container
+			+e.slider
+				.swiper-container
+					.swiper-wrapper
+						+sSlierSl()
+						+sSlierSl('blue')
+						+sSlierSl('orange')
+				+b.slider-prev--js
+					+icon('arrow-left-long')
+				+b.slider-next--js
+					+icon('arrow-right-long')
+	// end sSlider
+
+mixin sSlierSl(color="#e8aa3b")
+	.swiper-slide
+		+e.row.row
+			+e.content-col.col-12.col-lg-6(style="background-color: #e8aa3b;")
+				+e.date 8 гарантированных дат
+				+e.txt
+					h4 КУРОРТНЫЙ ПАМИР
+					p
+						| Активный семейный отдых в горах Памира
+						| Приключенческий тур с треккингом
+					+e.sm
+						| Кыргызстан, горы Памира
+						| 8 дней / 7 ночей
+				+e.btn(href='#') Подробнее »»
+			+e.img-col.col-12.col-lg-6
+				+e.img
+					img.swiper-lazy(src="#" data-src="img/@2x/sSlider-img.png" alt="")

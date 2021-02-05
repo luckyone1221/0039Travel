@@ -1,0 +1,20 @@
+mixin sBaner(data)
+	// start sBaner
+	+b.SECTION.sBaner#sBaner&attributes(attributes)
+		+e.row.row
+			+e.mob-title.col-12.d-lg-none ВОСХОЖДЕНИЕ НА ПИК ЛЕНИНА
+			.col-lg-6
+				+b.video-fr(href='#')
+					img(loading="lazy" src="img/@2x/video-bl-img.jpg" alt="")
+			+e.content-col.col-lg-6
+				+b.section-title
+					h2.d-none.d-lg-block
+						| ВОСХОЖДЕНИЕ
+						|
+						br.d-none.d-xxl-block
+						| НА ПИК ЛЕНИНА
+					p Подъем на вершину пика Ленина (7134 м) и фантастические панорамы вокруг
+					+e.sm.d-none.d-lg-block Автор: Алексей Колганов
+				.text-center.text-lg-start
+					+e.btn(href="#") Перейти в видеогалерею »»
+	// end sBaner

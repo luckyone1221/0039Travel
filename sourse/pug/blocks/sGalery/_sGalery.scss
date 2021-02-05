@@ -288,8 +288,7 @@
 		}
 	}
 	//video
-	&__video{
-		display: block;
+	.video-fr{
 		width: var(--banVidW);
 
 		height: 258px;
@@ -302,60 +301,6 @@
 		@include media-breakpoint-up(lg){
 			height: auto;
 		}
-		overflow: hidden;
-
-		&:hover{
-			img{
-				filter: brightness(80%);
-				transform: scale(1.1);
-			}
-		}
-
-		img{
-			@include mt();
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
-		position: relative;
-		&:after{
-			content: '';
-			position: absolute;
-			z-index: 1;
-			top: 50%;
-			left: 50%;
-			transform: translateX(-50%) translateY(-50%);
-
-			border-radius: 50%;
-			border: 2px solid $primary;
-
-			background-image: url(../img/svg/play-triangle.svg);
-			background-repeat: no-repeat;
-
-
-			background-size: 25px 28px;
-			background-position: 23px 18px;
-			width: 64px;
-			height: 64px;
-			@include media-breakpoint-up(md){
-				background-size: 34px 39px;
-				background-position: 32px 25px;
-				width: 89px;
-				height: 89px;
-			}
-			@include media-breakpoint-up(lg){
-				background-size: 24px 28px;
-				background-position: 24px 18px;
-				width: 65px;
-				height: 65px;
-			}
-		}
-
 	}
 	//
 	&__descr-bl{
@@ -540,6 +485,9 @@
 		padding: 22px 51px 22px 22px;
 	}
 
+	&--alt{
+		&__row{}
+	}
 	&__row{
 		align-items: center;
 
@@ -644,4 +592,63 @@
 			padding: 13px 20px;
 		}
 	}
+}
+
+//
+.video-fr{
+	display: block;
+	overflow: hidden;
+
+	&:hover{
+		img{
+			filter: brightness(80%);
+			transform: scale(1.1);
+		}
+	}
+
+	img{
+		@include mt();
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	position: relative;
+	&:after{
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		border-radius: 50%;
+		border: 2px solid $primary;
+
+		background-image: url(../img/svg/play-triangle.svg);
+		background-repeat: no-repeat;
+
+
+		background-size: 25px 28px;
+		background-position: 23px 18px;
+		width: 64px;
+		height: 64px;
+		@include media-breakpoint-up(md){
+			background-size: 34px 39px;
+			background-position: 32px 25px;
+			width: 89px;
+			height: 89px;
+		}
+		@include media-breakpoint-up(lg){
+			background-size: 24px 28px;
+			background-position: 24px 18px;
+			width: 65px;
+			height: 65px;
+		}
+	}
+
 }

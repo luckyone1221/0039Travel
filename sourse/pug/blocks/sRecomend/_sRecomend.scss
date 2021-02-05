@@ -162,6 +162,10 @@
 .d-row{
 	@include roww(16px);
 
+	@include media-breakpoint-up(xl){
+		@include roww(32px);
+	}
+
 	& > *{
 		margin-bottom: 53px;
 	}
@@ -185,6 +189,9 @@
 		@include media-breakpoint-up(lg){
 			padding-top: 96%;
 			margin-bottom: 24px;
+		}
+		@include media-breakpoint-up(xl){
+			padding-top: (264/446) * 100%;
 		}
 	}
 	&__txt{

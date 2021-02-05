@@ -555,7 +555,9 @@
   &__main-nav-cont{
 
     &.hidden-mob{
-      display: none;
+      @include media-breakpoint-down(xl){
+        display: none;
+      }
     }
   }
 
@@ -1187,9 +1189,29 @@
       font-size: 15px;
     }
   }
-  &__{}
-  &__{}
-  &__{}
+
+  //mob-langitems
+  &__mob-langitems{
+
+  }
+  &__ml-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid $gray-300;
+  }
+  &__ml-img{
+    img{
+
+    }
+  }
+  &__ml-txt{
+
+  }
+  //
   &__{}
   &__{}
 }

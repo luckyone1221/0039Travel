@@ -1,0 +1,48 @@
+// start .sSlider
+.sSlider {
+	padding: 60px 0 0;
+	@include media-breakpoint-up(xl){
+		padding: 101px 0 0;
+	}
+	@include media-breakpoint-up(xxl){
+		padding: 95px 0 0;
+	}
+
+
+	&__slider{
+		.swiper-container{
+
+		}
+		.swiper-wrapper{
+
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+} // end.sSlider
+
+.form2-cont{
+	padding: 57px 15px 49px;
+	@include media-breakpoint-up(md){
+		padding: 70px 15px 47px;
+	}
+	@include media-breakpoint-up(lg){
+		padding: 79px 15px 74px;
+	}
+	@include media-breakpoint-up(xl){
+		padding: 72px 15px;
+		max-width: 960px;
+	}
+	@include media-breakpoint-up(xxl){
+		padding: 96px 15px 74px;
+		max-width: 960px;
+	}
+}

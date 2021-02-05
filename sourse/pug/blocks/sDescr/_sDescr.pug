@@ -1,9 +1,13 @@
 mixin sDescr(data)
 	// start sDescr
 	+b.SECTION.sDescr.section#sDescr&attributes(attributes)
-		.container
-			+b.section-title
-				h2 Восхождение на пик Ленина (7134 м)
+		+e.container.container
+			+b.section-title.text-center.text-xl-start
+				h2
+					span.up-case
+						| Восхождение на пик Ленина
+						|
+					span (7134 м)
 				p Памир, Кыргызстан
 			+e.row.row
 				+e.l-col.col-12.col-xl-6
@@ -59,13 +63,32 @@ mixin sDescr(data)
 							|, расположенных на разных высотах – 3600 м и 4400 м.
 				+e.r-col.col-12.col-xl-6
 					+e.map
-						+e.img-stab
-							img(loading="lazy" src="img/@2x/map-img.png" alt="")
+						iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d395325.333349064!2d72.61591804097165!3d39.27738251631133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38befc513bcb0635%3A0xa7c9fe33c28cb1!2z0J_QuNC6INCb0LXQvdC40L3QsA!5e0!3m2!1sru!2sua!4v1612398917978!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0")
 			+e.light-str
 				.container
-					.row
-						+lightSqItem()
+					+e.ls-row.row
+						+lightSqItem(1)(class="active")
+							| Выберите
+							br
+							| пакет услуг
+						+lightSqItem(2)(href='#')
+							| Посмотрите даты
+							br
+							| групповых туров
+						+lightSqItem(3)(href='#')
+							| Почитайте
+							br
+							| отзывы
+						+lightSqItem(4)(href='#')
+							| Отправьте
+							br
+							| заявку
 	// end sDescr
 
-mixin lightSqItem()
-	.col-auto
+mixin lightSqItem(imgNum)
+	.col-6.col-md-3.col-xl-auto
+		+e.ls-cont&attributes(attributes)
+			+e.ls-img
+				img(loading="lazy" src=`img/@2x/ls-sq-${imgNum}.png` alt="")
+			+e.ls-txt
+				block

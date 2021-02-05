@@ -240,7 +240,7 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = '02-1905.png';
+	screenName = '02-970.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -338,7 +338,7 @@ function eventHandler() {
 		}
 	}
 
-	makeDDGroup(['.dd-menu-js', '.dd-foot-js']); //slider in tab
+	makeDDGroup(['.dd-menu-js', '.dd-foot-js', '.dd-price-js']); //slider in tab
 
 	var AllSliders = document.querySelectorAll('.galery-slider-js');
 

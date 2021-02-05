@@ -1,0 +1,272 @@
+// start .sPrice
+.sPrice {
+	--sPB: 0px;
+
+	--sPT: 30px;
+	--sTPB: 30px;
+	@include media-breakpoint-up(sm){
+		--sPT: 69px;
+		--sTPB: 18px;
+	}
+	@include media-breakpoint-up(md){
+		--sPT: 85px;
+		--sTPB: 20px;
+	}
+	@include media-breakpoint-up(lg){
+		--sPT: 86px;
+		--sTPB: 25px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: 108px;
+		--sTPB: 36px;
+	}
+	@include media-breakpoint-up(xxl){
+		--sPT: 108px;
+		--sTPB: 36px;
+	}
+
+	.section-title{
+		h2{
+			color: $gray-750;
+			font-weight: 600;
+			text-transform: uppercase;
+
+			font-size: 20px;
+			margin-bottom: -2px;
+			@include media-breakpoint-up(md){
+				font-size: 24px;
+				margin-bottom: -3px;
+			}
+			@include media-breakpoint-up(lg){
+				font-size: 32px;
+				margin-bottom: -5px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 36px;
+			}
+		}
+		p{
+			color: $gray-750;
+			font-weight: 300;
+
+			font-size: 20.5px;
+			@include media-breakpoint-up(md){
+				font-size: 24.8px;
+			}
+			@include media-breakpoint-up(lg){
+				font-size: 33px;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 36px;
+				letter-spacing: .5px;
+			}
+		}
+	}
+
+	&__txt{
+		max-width: 99%;
+		margin: 0 auto 52px;
+		font-size: 16px;
+		line-height: 1.5;
+		@include media-breakpoint-up(md){
+			max-width: 99%;
+			margin: 0 auto 43px;
+			font-size: 17px;
+			line-height: 1.5;
+		}
+		@include media-breakpoint-up(lg){
+			font-size: 18px;
+			line-height: 1.33;
+			max-width: 82%;
+			margin: 0 auto 48px;
+		}
+		text-align: center;
+		@include media-breakpoint-up(xl){
+			text-align: left;
+			max-width: calc(79% - 10px);
+			margin: 0 0 33px 10px;
+		}
+		@include media-breakpoint-up(xxl){
+			max-width: 75%;
+			margin: 0 0 52px;
+		}
+
+
+		&> *:last-child{
+			margin-bottom: 0;
+		}
+
+		p{
+			margin-bottom: 24px;
+		}
+
+		color: $gray-750;
+	}
+
+	//row
+	&__row{
+		@include roww(0px);
+	}
+	&__col{
+		position: relative;
+
+		--faceO: 1;
+		--linkO: 0;
+		--navBtnsO: 0;
+		&:hover{
+			--faceO: 0;
+			--linkO: 1;
+			--navBtnsO: 1;
+
+			img{
+				filter: brightness(80%);
+				transform: scale(1.1);
+			}
+		}
+	}
+	&__img{
+		@extend .accept-ratio-frame-nh;
+
+		height: 157px;
+		@include media-breakpoint-up(md){
+			height: 238px;
+		}
+		@include media-breakpoint-up(xl){
+			height: 312px;
+		}
+	}
+	&__content{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background-color: rgba(0, 36, 81, 0.6);
+	}
+	&__face{
+		@include mt();
+		opacity: var(--faceO);
+
+
+		padding-bottom: 10px;
+		@include media-breakpoint-up(lg){
+			padding-bottom: 17px;
+		}
+
+		text-align: center;
+		color: $white;
+	}
+	&__name{
+		text-transform: uppercase;
+
+		font-size: 25px;
+		letter-spacing: 0.2px;
+		margin-bottom: 1px;
+		@include media-breakpoint-up(md){
+			font-size: 29px;
+			letter-spacing: 0.2px;
+			margin-bottom: 9px;
+		}
+		@include media-breakpoint-up(lg){
+			font-size: 31px;
+			letter-spacing: 0.2px;
+			margin-bottom: 11px;
+		}
+		@include media-breakpoint-up(xxl){
+			font-size: 40px;
+			letter-spacing: 0.2px;
+			margin-bottom: -2px;
+		}
+	}
+	&__price{
+		text-transform: uppercase;
+		font-weight: 600;
+
+		font-size: 20.5px;
+		letter-spacing: 0.6px;
+		@include media-breakpoint-up(md){
+			font-size: 24px;
+			letter-spacing: 0.6px;
+		}
+	}
+	&__link{
+		@include mt();
+		opacity: var(--linkO);
+
+		position: absolute;
+		z-index: 4;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+
+		color: $white;
+		&:hover{
+			color: rgba($white, .7);
+		}
+		text-align: center;
+		text-transform: uppercase;
+
+		font-size: 17px;
+		letter-spacing: 0.8px;
+		@include media-breakpoint-up(md){
+			font-size: 17px;
+			letter-spacing: 0.8px;
+		}
+		@include media-breakpoint-up(lg){
+			font-size: 20px;
+			letter-spacing: 0.85px;
+		}
+	}
+	&__nav-btns{
+		@include mt();
+		opacity: var(--navBtnsO);
+		position: absolute;
+		z-index: 5;
+
+		top: 10px;
+		right: 20px;
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-up(lg){
+			display: block;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 30px;
+		}
+		@include media-breakpoint-up(xl){
+			right: 30px;
+		}
+	}
+	&__nav-btn{
+		display: block;
+
+		margin: 0 10px 0 0;
+		@include media-breakpoint-up(lg){
+			margin: 0 0 10px;
+		}
+
+		&:last-child{
+			margin: 0;
+		}
+
+		.icon{
+			color: currentColor;
+			font-size: 35px;
+		}
+
+		color: rgba($white, .7);
+		&.active, &:hover{
+			color: $yellow;
+		}
+	}
+	//
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+} // end.sPrice

@@ -50,3 +50,22 @@ mixin recomedItem(data)
 		+e.name(href="#")=data.name
 		+e.descr=data.descr
 		+e.more-link(href='#') подробнее...
+
+
+mixin sRecomend2(data)
+	// start sRecomend
+	+b.SECTION.sRecomend.section#sRecomend&attributes(attributes)
+		+e.bg
+			+e.bg-img
+				img(loading="lazy" src=`img/@2x/footer-img.jpg` alt="")
+		.container
+			+b.section-title.text-center.text-xl-start
+				h2 Это интересно
+			+b.d-row.row
+				+rightColItem(1, 'col-md-4')
+					| Наши восходители
+				+rightColItem(2, 'col-md-4')
+					| Отзывы о нас
+				+rightColItem(3, 'col-md-4')
+					| Экологическая акция
+	// end sRecomend

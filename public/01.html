@@ -100,7 +100,7 @@
 								</div>
 							</div>
 							<div class="main-menu__mn-dd">
-								<div class="main-menu__dd-item main-dd-js" data-menu-id="where">
+								<div class="main-menu__dd-item active main-dd-js" data-menu-id="where">
 									<div class="main-menu__c-row row">
 										<div class="main-menu__c-counrty c-country-js col-12 col-xl-auto" data-country="country1">
 											<div class="main-menu__c-img"><img loading="lazy" src="img/@2x/m-where-pr-1.png" alt=""/><img loading="lazy" src="img/@2x/m-where-1.png" alt=""/>
@@ -256,7 +256,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="main-menu__dd-item main-menu__dd-item--search active main-dd-js" data-menu-id="search">
+								<div class="main-menu__dd-item main-menu__dd-item--search main-dd-js" data-menu-id="search">
 									<div class="main-menu__searh-cont">
 										<div class="form-wrap">
 											<form>
@@ -290,7 +290,7 @@
 									</div>
 								</div>
 								<div class="main-menu__dd-item main-dd-js d-xl-none" data-menu-id="language">
-									<div class="main-menu__mob-langitems">
+									<div class="main-menu__mob-langitems"><a class="main-menu__ml-item active" href="#"><span class="main-menu__ml-img"><img loading="lazy" src="img/@2x/lang-1.png" alt=""/></span><span class="main-menu__ml-txt">Русский</span></a><a class="main-menu__ml-item" href="#"><span class="main-menu__ml-img"><img loading="lazy" src="img/@2x/lang-2.png" alt=""/></span><span class="main-menu__ml-txt">English</span></a><a class="main-menu__ml-item" href="#"><span class="main-menu__ml-img"><img loading="lazy" src="img/@2x/lang-3.png" alt=""/></span><span class="main-menu__ml-txt">Español</span></a><a class="main-menu__ml-item" href="#"><span class="main-menu__ml-img"><img loading="lazy" src="img/@2x/lang-4.png" alt=""/></span><span class="main-menu__ml-txt">Français</span></a><a class="main-menu__ml-item" href="#"><span class="main-menu__ml-img"><img loading="lazy" src="img/@2x/lang-5.png" alt=""/></span><span class="main-menu__ml-txt">Deutsch</span></a>
 									</div>
 								</div>
 							</div>
@@ -456,9 +456,11 @@
 				</div>
 				<!-- start sDescr-->
 				<section class="sDescr section" id="sDescr">
-					<div class="container">
-						<div class="section-title">
-							<h2>Восхождение на пик Ленина (7134 м)</h2>
+					<div class="sDescr__container container">
+						<div class="section-title text-center text-xl-start">
+							<h2><span class="up-case">
+									Восхождение на пик Ленина
+									</span><span>(7134 м)</span></h2>
 							<p>Памир, Кыргызстан</p>
 						</div>
 						<div class="sDescr__row row">
@@ -508,757 +510,524 @@
 							</div>
 							<div class="sDescr__r-col col-12 col-xl-6">
 								<div class="sDescr__map">
-									<div class="sDescr__img-stab"><img loading="lazy" src="img/@2x/map-img.png" alt=""/>
-									</div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d395325.333349064!2d72.61591804097165!3d39.27738251631133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38befc513bcb0635%3A0xa7c9fe33c28cb1!2z0J_QuNC6INCb0LXQvdC40L3QsA!5e0!3m2!1sru!2sua!4v1612398917978!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 								</div>
 							</div>
 						</div>
 						<div class="sDescr__light-str">
 							<div class="container">
-								<div class="row">
-									<div class="col-auto"></div>
+								<div class="sDescr__ls-row row">
+									<div class="col-6 col-md-3 col-xl-auto">
+										<div class="sDescr__ls-cont active">
+											<div class="sDescr__ls-img"><img loading="lazy" src="img/@2x/ls-sq-1.png" alt=""/>
+											</div>
+											<div class="sDescr__ls-txt">Выберите<br/>пакет услуг
+											</div>
+										</div>
+									</div>
+									<div class="col-6 col-md-3 col-xl-auto"><a class="sDescr__ls-cont" href="#"><span class="sDescr__ls-img"><img loading="lazy" src="img/@2x/ls-sq-2.png" alt=""/></span><span class="sDescr__ls-txt">Посмотрите даты<br/>групповых туров</span></a>
+									</div>
+									<div class="col-6 col-md-3 col-xl-auto"><a class="sDescr__ls-cont" href="#"><span class="sDescr__ls-img"><img loading="lazy" src="img/@2x/ls-sq-3.png" alt=""/></span><span class="sDescr__ls-txt">Почитайте<br/>отзывы</span></a>
+									</div>
+									<div class="col-6 col-md-3 col-xl-auto"><a class="sDescr__ls-cont" href="#"><span class="sDescr__ls-img"><img loading="lazy" src="img/@2x/ls-sq-4.png" alt=""/></span><span class="sDescr__ls-txt">Отправьте<br/>заявку</span></a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
 				<!-- end sDescr-->
-				<!-- start sContent-->
-				<section class="sContent section" id="sContent">
-					<div class="container"><a class="sContent__back-link" href="#">
-						<svg class="icon icon-arrow-left ">
-							<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
-						</svg><span>ДАТЫ И ЦЕНЫ</span></a>
+				<!-- start sPrice-->
+				<section class="sPrice section" id="sPrice">
+					<div class="container">
 						<div class="section-title text-center text-xl-start">
-							<h2 class="d-md-none">БАЗОВЫЕ ЛАГЕРЯ компании</h2>
-							<p class="d-md-none">Central Asia Travel</p>
-							<h2 class="d-none d-md-block">БАЗОВЫЕ ЛАГЕРЯ</h2>
-							<p class="d-none d-md-block">компании Central Asia Travel</p>
+							<h2>ЦЕНОВЫЕ ПАКЕТЫ</h2>
+							<p>для программы восхождения на пик Ленина</p>
 						</div>
-						<div class="sContent__main-row row">
-							<div class="sContent__left-col col-xl-auto">
-								<div class="social"><a class="social__item" href="#">
-									<svg class="icon icon-fb ">
-										<use xlink:href="img/svg/sprite.svg#fb"></use>
-									</svg></a><a class="social__item" href="#">
-									<svg class="icon icon-tw ">
-										<use xlink:href="img/svg/sprite.svg#tw"></use>
-									</svg></a><a class="social__item" href="#">
-									<svg class="icon icon-vb ">
-										<use xlink:href="img/svg/sprite.svg#vb"></use>
-									</svg></a><a class="social__item" href="#">
-									<svg class="icon icon-wa ">
-										<use xlink:href="img/svg/sprite.svg#wa"></use>
-									</svg></a><a class="social__item" href="#">
-									<svg class="icon icon-tg ">
-										<use xlink:href="img/svg/sprite.svg#tg"></use>
+						<div class="sPrice__txt">
+							<p>Здесь вы можете выбрать один из<strong>12 ценовых пакетов</strong>, которые различаются по набору включенных услуг и, соответственно, по стоимости – от самого<strong>
+									бюджетного
+									</strong><br class="d-md-none"/><a href="#"><strong>
+										Супер Эконом
+										</strong></a>
+								варианта до наиболее
+								<strong>
+									комфортного
+									</strong><a href="#"><strong>VIP-пакета.</strong></a>
+							</p>
+							<p>Каждый сможет подобрать для себя<br class="d-md-none"/>оптимальный формат путешествия!</p>
+						</div>
+					</div>
+					<div class="sPrice__row row">
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-1.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">Бизнес
+									</div>
+									<div class="sPrice__price">1000 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
 									</svg></a>
 								</div>
-								<div class="tabs">
-									<div class="tabs__caption">
-										<div class="tabs__btn">Базовый лагерь  (3600 м)
-										</div>
-										<div class="tabs__btn">Лагерь 1 «Солнечный» (4400 м)
-										</div>
-										<div class="tabs__btn active">Меню базовых лагерей
-										</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-2.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">Бизнес плюс
 									</div>
-									<div class="tabs__wrap">
-										<div class="tabs__content">
-											<div class="tabContent">
-												<h4 class="tabContent__title">БАЗОВЫЙ ЛАГЕРЬ «ПОЛЯНА ЭДЕЛЬВЕЙСОВ» (3600 м)
-												</h4>
-												<div class="tabContent__img-bl"><img loading="lazy" src="img/@2x/food-img.jpg" alt=""/>
-												</div>
-												<div class="tabContent__txt-box tabContent__txt-box--first">
-													<p><strong>Базовый лагерь пика Ленина</strong>
-														находится в альпийской зоне, на живописной
-														<strong>Поляне эдельвейсов</strong>
-														(3600 м) - идеальном месте для отдыха и полноценного восстановления после акклиматизационных выходов, что значительно повышает шансы успешного восхождения на вершину.
-													</p>
-													<p>Из Базового лагеря начинается пеший маршрут восхождения на пик Ленина и другие вершины в этом районе.</p>
-													<p><strong>Базовый Лагерь</strong>
-														«Поляна Эдельвейсов» – один из самых уютных и комфортабельных лагерей в
-														<strong>урочище Ачик-Таш</strong>, находится<strong>ближе всех от начала тропы на перевал Путешественников.</strong>
-													</p>
-													<p>
-														В нашем Базовом лагере всех и каждого принимают очень душевно. Всем желающим, да и просто заглянувшим в лагерь, мы всегда предложим
-														<strong>горячий чай</strong>
-														со сладостями. Мы не делаем ставку на «конвейерное обслуживание», которое так или иначе получается при огромном количестве гостей. У нас в лагере просторно и не очень многолюдно. Это позволяет нам уделять каждому персональное внимание и повышать качество обслуживания, что делает наш сервис эксклюзивным.
-													</p>
-												</div>
-												<div class="tabContent__dd-items dd-menu-js">
-													<div class="tabContent__dd-item active">
-														<div class="tabContent__dd-head dd-head-js">
-															<div class="tabContent__dd-h-txt">Базовый лагерь пика Ленина: инфраструктура
-															</div>
-															<div class="tabContent__dd-h-plus">
-																<svg class="icon icon-plus ">
-																	<use xlink:href="img/svg/sprite.svg#plus"></use>
-																</svg>
-															</div>
-														</div>
-														<div class="tabContent__dd-content dd-content-js active">
-															<div class="tabContent__check-content">
-																<p>Базовый лагерь (3600 м) располагает богатой и продуманной до мелочей инфраструктурой и предлагает своим гостям следующие услуги:</p>
-																<div class="tabContent__check-title mb-0"><strong>Национальные юрты</strong>
-																	- кают-компании для отдыха, питания и развлечений, где:
-																</div>
-																<ul>
-																	<!-- --->
-																	<li>тепло и уютно: юрты оснащены печками, протапливаемыми ежедневно;</li>
-																	<li>удобно: есть необходимая мебель - столы, стулья;</li>
-																	<li>весело: электричество, аудио- и видеоаппаратура;</li>
-																	<li>бесподобно вкусно кормят: блюда азиатской и европейской кухонь от профессиональных поваров, также имеется бар;</li>
-																	<li>есть настольные игры: шахматы, карты, нарды, дартс;</li>
-																	<li>самый мощный сигнал Wi-Fi.</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-																<div class="tabContent__check-title mb-0">Удобные отапливаемые туристические тенты, оснащенные:
-																</div>
-																<ul>
-																	<li>электричеством;</li>
-																	<li>обогревателями;</li>
-																	<li>индивидуальным освещением - настольными лампами;</li>
-																	<li>раскладными кроватями;</li>
-																	<li>одеялами, подушками и сменным постельным бельём - пододеяльниками, наволочками, простынями;</li>
-																	<li>стульями в «тамбуре».</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-																<div class="tabContent__check-title">Альтернативное<strong>размещение повышенной комфортности</strong>
-																	- за дополнительную плату доступно<strong>проживание по два человека в просторных киргизских юртах</strong>, оформленных в национальном стиле и расположенных на территории Базового лагеря. Юрты непременно порадуют требовательных гостей удобством проживания и изысканностью декора. Каждая юрта рассчитана на проживание 2-х человек и оснащена всем необходимым для комфортного пребывания.
-																</div><strong>В юрте есть:</strong>
-																<ul>
-																	<li>персональный санузел (душевая кабинка, туалет, горячая/холодная вода);</li>
-																	<li>отопление и электричество;</li>
-																	<li>2 кровати (возможна установка дополнительной кровати), 2 шкафа, стол, 2 кресла;</li>
-																	<li>минибар;</li>
-																	<li>2 двери;</li>
-																	<li>и ... 2 сундука (!). В настоящей киргизской юрте наличие сундуков обязательно.</li>
-																</ul>
-																<p><strong>
-																		Услуги:
-																		</strong><span>уборка в юрте и смена постельного белья.</span></p>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-																<div class="tabContent__check-title"><strong>Вкусное и полезное 3-х разовое питание от профессиональных поваров.</strong>Лагерь вам его гарантирует, причем в изобилии - 2 горячих блюда, 2 овощных салата, фруктовый десерт, чай или кофе (по желанию). Вегетарианское питание и питание на заказ также предусмотрено. Опыт работы наших поваров составляет не менее 10 лет.
-																</div>
-																<p>
-																	В Базовом лагере установлена национальная глиняная печь -
-																	<strong>тандыр,</strong>где выпекается свежий хлеб, лепешки и самса.
-																</p>
-																<div class="tabContent__check-title"><strong>Wi-Fi</strong>на всей территории лагеря.
-																</div>
-																<div class="tabContent__check-title"><strong>Душевые кабинки и баня.</strong>Душевые кабинки с горячей водой доступны в течение всего дня. Отличную баню с настоящей парилкой топят ежедневно во второй половине дня.
-																</div>
-																<div class="tabContent__check-title"><strong>Туалеты</strong>
-																	со сливными бачками, а также удобные
-																	<strong>системы для умывания</strong>
-																	с кранами, мылом и зеркалами.
-																</div>
-																<div class="tabContent__check-title"><strong>Камера хранения.</strong>
-																</div>
-																<div class="tabContent__check-title"><strong>Мини-маркет,</strong>
-																	где можно приобрести товары первой необходимости, специализированные продукты для восхождения, альпинистское снаряжение, сувениры и многое другое.
-																</div>
-																<div class="tabContent__check-title"><strong>Медицинская помощь.</strong>
-																	В лагере есть медицинский кабинет со всеми необходимыми медикаментами для оказания первой помощи, где всегда дежурит
-																	<strong>врач.</strong>Врач-реаниматор имеет опыт высотной работы, поэтому при необходимости в любое время сможет оказать квалифицированную медицинскую помощь. В его обязанности входит также проведение обследования, консультаций и выдача необходимых рекомендаций относительно вашего<br class="d-none d-xxl-block"/>
-																	здоровья.
-																</div>
-																<div class="tabContent__check-title"><strong>Команда спасателей,</strong>
-																	состоящая из опытных высотных гидов, готовых в любой момент прийти на помощь.
-																</div>
-																<div class="tabContent__check-title">Волейбольная площадка для любителей активного досуга.
-																</div>
-																<div class="tabContent__check-title">Прогноз погоды для района пика Ленина, который обновляется ежедневно.
-																</div>
-																<div class="tabContent__check-title">По всей уютной и благоустроенной территории Базового лагеря установлены указатели и фонари.
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="tabContent__dd-item">
-														<div class="tabContent__dd-head dd-head-js">
-															<div class="tabContent__dd-h-txt">Дополнительные услуги в Базовом лагере
-															</div>
-															<div class="tabContent__dd-h-plus">
-																<svg class="icon icon-plus ">
-																	<use xlink:href="img/svg/sprite.svg#plus"></use>
-																</svg>
-															</div>
-														</div>
-														<div class="tabContent__dd-content dd-content-js">
-															<div class="tabContent__check-content">
-																<div class="tabContent__check-title">Волейбольная площадка для любителей активного досуга.
-																</div>
-																<div class="tabContent__check-title">Прогноз погоды для района пика Ленина, который обновляется ежедневно.
-																</div>
-																<div class="tabContent__check-title">По всей уютной и благоустроенной территории Базового лагеря установлены указатели и фонари.
-																</div>
-																<div class="tabContent__check-title">Волейбольная площадка для любителей активного досуга.
-																</div>
-																<div class="tabContent__check-title">Прогноз погоды для района пика Ленина, который обновляется ежедневно.
-																</div>
-																<div class="tabContent__check-title">По всей уютной и благоустроенной территории Базового лагеря установлены указатели и фонари.
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="galerySlider galerySlider--js">
-													<div class="galerySlider__head-row row">
-														<div class="col">
-															<h4 class="galerySlider__title">фотогалерея меню базовых лагерей
-															</h4>
-														</div>
-														<div class="col-auto"><a class="galerySlider__show-all" href="#"><span>
-																Показать все
-																</span><span>(48)</span></a>
-														</div>
-														<div class="col-auto d-none d-lg-block">
-															<div class="galerySlider__conrolls">
-																<div class="galery-prev galery-prev--js">
-																	<svg class="icon icon-chevron-left ">
-																		<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-																	</svg>
-																</div>
-																<div class="galery-next galery-next--js">
-																	<svg class="icon icon-chevron-right ">
-																		<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-																	</svg>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="galerySlider__slider">
-														<div class="swiper-container galery-slider-js">
-															<div class="swiper-wrapper">
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-1.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-1.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-2.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-2.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-3.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-3.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-1.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-1.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-2.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-2.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-3.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-3.png" alt=""/></a>
-																</div>
-															</div>
-														</div>
-														<div class="galerySlider__conrolls d-lg-none">
-															<div class="galery-prev galery-prev--js">
-																<svg class="icon icon-chevron-left ">
-																	<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-																</svg>
-															</div>
-															<div class="galery-next galery-next--js">
-																<svg class="icon icon-chevron-right ">
-																	<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-																</svg>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tabs__content">
-											<div class="tabContent">
-												<h4 class="tabContent__title">БАЗОВЫЙ ЛАГЕРЬ «ПОЛЯНА ЭДЕЛЬВЕЙСОВ» (3600 м)
-												</h4>
-												<div class="tabContent__img-bl"><img loading="lazy" src="img/@2x/food-img.jpg" alt=""/>
-												</div>
-												<div class="tabContent__txt-box tabContent__txt-box--first">
-													<p><strong>Базовый лагерь пика Ленина</strong>
-														находится в альпийской зоне, на живописной
-														<strong>Поляне эдельвейсов</strong>
-														(3600 м) - идеальном месте для отдыха и полноценного восстановления после акклиматизационных выходов, что значительно повышает шансы успешного восхождения на вершину.
-													</p>
-													<p>Из Базового лагеря начинается пеший маршрут восхождения на пик Ленина и другие вершины в этом районе.</p>
-													<p><strong>Базовый Лагерь</strong>
-														«Поляна Эдельвейсов» – один из самых уютных и комфортабельных лагерей в
-														<strong>урочище Ачик-Таш</strong>, находится<strong>ближе всех от начала тропы на перевал Путешественников.</strong>
-													</p>
-													<p>
-														В нашем Базовом лагере всех и каждого принимают очень душевно. Всем желающим, да и просто заглянувшим в лагерь, мы всегда предложим
-														<strong>горячий чай</strong>
-														со сладостями. Мы не делаем ставку на «конвейерное обслуживание», которое так или иначе получается при огромном количестве гостей. У нас в лагере просторно и не очень многолюдно. Это позволяет нам уделять каждому персональное внимание и повышать качество обслуживания, что делает наш сервис эксклюзивным.
-													</p>
-												</div>
-												<div class="tabContent__dd-items dd-menu-js">
-													<div class="tabContent__dd-item active">
-														<div class="tabContent__dd-head dd-head-js">
-															<div class="tabContent__dd-h-txt">Базовый лагерь пика Ленина: инфраструктура
-															</div>
-															<div class="tabContent__dd-h-plus">
-																<svg class="icon icon-plus ">
-																	<use xlink:href="img/svg/sprite.svg#plus"></use>
-																</svg>
-															</div>
-														</div>
-														<div class="tabContent__dd-content dd-content-js active">
-															<div class="tabContent__check-content">
-																<p>Базовый лагерь (3600 м) располагает богатой и продуманной до мелочей инфраструктурой и предлагает своим гостям следующие услуги:</p>
-																<div class="tabContent__check-title mb-0"><strong>Национальные юрты</strong>
-																	- кают-компании для отдыха, питания и развлечений, где:
-																</div>
-																<ul>
-																	<!-- --->
-																	<li>тепло и уютно: юрты оснащены печками, протапливаемыми ежедневно;</li>
-																	<li>удобно: есть необходимая мебель - столы, стулья;</li>
-																	<li>весело: электричество, аудио- и видеоаппаратура;</li>
-																	<li>бесподобно вкусно кормят: блюда азиатской и европейской кухонь от профессиональных поваров, также имеется бар;</li>
-																	<li>есть настольные игры: шахматы, карты, нарды, дартс;</li>
-																	<li>самый мощный сигнал Wi-Fi.</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-																<div class="tabContent__check-title mb-0">Удобные отапливаемые туристические тенты, оснащенные:
-																</div>
-																<ul>
-																	<li>электричеством;</li>
-																	<li>обогревателями;</li>
-																	<li>индивидуальным освещением - настольными лампами;</li>
-																	<li>раскладными кроватями;</li>
-																	<li>одеялами, подушками и сменным постельным бельём - пододеяльниками, наволочками, простынями;</li>
-																	<li>стульями в «тамбуре».</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-																<div class="tabContent__check-title">Альтернативное<strong>размещение повышенной комфортности</strong>
-																	- за дополнительную плату доступно<strong>проживание по два человека в просторных киргизских юртах</strong>, оформленных в национальном стиле и расположенных на территории Базового лагеря. Юрты непременно порадуют требовательных гостей удобством проживания и изысканностью декора. Каждая юрта рассчитана на проживание 2-х человек и оснащена всем необходимым для комфортного пребывания.
-																</div><strong>В юрте есть:</strong>
-																<ul>
-																	<li>персональный санузел (душевая кабинка, туалет, горячая/холодная вода);</li>
-																	<li>отопление и электричество;</li>
-																	<li>2 кровати (возможна установка дополнительной кровати), 2 шкафа, стол, 2 кресла;</li>
-																	<li>минибар;</li>
-																	<li>2 двери;</li>
-																	<li>и ... 2 сундука (!). В настоящей киргизской юрте наличие сундуков обязательно.</li>
-																</ul>
-																<p><strong>
-																		Услуги:
-																		</strong><span>уборка в юрте и смена постельного белья.</span></p>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-																<div class="tabContent__check-title"><strong>Вкусное и полезное 3-х разовое питание от профессиональных поваров.</strong>Лагерь вам его гарантирует, причем в изобилии - 2 горячих блюда, 2 овощных салата, фруктовый десерт, чай или кофе (по желанию). Вегетарианское питание и питание на заказ также предусмотрено. Опыт работы наших поваров составляет не менее 10 лет.
-																</div>
-																<p>
-																	В Базовом лагере установлена национальная глиняная печь -
-																	<strong>тандыр,</strong>где выпекается свежий хлеб, лепешки и самса.
-																</p>
-																<div class="tabContent__check-title"><strong>Wi-Fi</strong>на всей территории лагеря.
-																</div>
-																<div class="tabContent__check-title"><strong>Душевые кабинки и баня.</strong>Душевые кабинки с горячей водой доступны в течение всего дня. Отличную баню с настоящей парилкой топят ежедневно во второй половине дня.
-																</div>
-																<div class="tabContent__check-title"><strong>Туалеты</strong>
-																	со сливными бачками, а также удобные
-																	<strong>системы для умывания</strong>
-																	с кранами, мылом и зеркалами.
-																</div>
-																<div class="tabContent__check-title"><strong>Камера хранения.</strong>
-																</div>
-																<div class="tabContent__check-title"><strong>Мини-маркет,</strong>
-																	где можно приобрести товары первой необходимости, специализированные продукты для восхождения, альпинистское снаряжение, сувениры и многое другое.
-																</div>
-																<div class="tabContent__check-title"><strong>Медицинская помощь.</strong>
-																	В лагере есть медицинский кабинет со всеми необходимыми медикаментами для оказания первой помощи, где всегда дежурит
-																	<strong>врач.</strong>Врач-реаниматор имеет опыт высотной работы, поэтому при необходимости в любое время сможет оказать квалифицированную медицинскую помощь. В его обязанности входит также проведение обследования, консультаций и выдача необходимых рекомендаций относительно вашего<br class="d-none d-xxl-block"/>
-																	здоровья.
-																</div>
-																<div class="tabContent__check-title"><strong>Команда спасателей,</strong>
-																	состоящая из опытных высотных гидов, готовых в любой момент прийти на помощь.
-																</div>
-																<div class="tabContent__check-title">Волейбольная площадка для любителей активного досуга.
-																</div>
-																<div class="tabContent__check-title">Прогноз погоды для района пика Ленина, который обновляется ежедневно.
-																</div>
-																<div class="tabContent__check-title">По всей уютной и благоустроенной территории Базового лагеря установлены указатели и фонари.
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="tabContent__dd-item">
-														<div class="tabContent__dd-head dd-head-js">
-															<div class="tabContent__dd-h-txt">Дополнительные услуги в Базовом лагере
-															</div>
-															<div class="tabContent__dd-h-plus">
-																<svg class="icon icon-plus ">
-																	<use xlink:href="img/svg/sprite.svg#plus"></use>
-																</svg>
-															</div>
-														</div>
-														<div class="tabContent__dd-content dd-content-js">
-															<div class="tabContent__check-content">
-																<div class="tabContent__check-title">Волейбольная площадка для любителей активного досуга.
-																</div>
-																<div class="tabContent__check-title">Прогноз погоды для района пика Ленина, который обновляется ежедневно.
-																</div>
-																<div class="tabContent__check-title">По всей уютной и благоустроенной территории Базового лагеря установлены указатели и фонари.
-																</div>
-																<div class="tabContent__check-title">Волейбольная площадка для любителей активного досуга.
-																</div>
-																<div class="tabContent__check-title">Прогноз погоды для района пика Ленина, который обновляется ежедневно.
-																</div>
-																<div class="tabContent__check-title">По всей уютной и благоустроенной территории Базового лагеря установлены указатели и фонари.
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="galerySlider galerySlider--js">
-													<div class="galerySlider__head-row row">
-														<div class="col">
-															<h4 class="galerySlider__title">фотогалерея меню базовых лагерей
-															</h4>
-														</div>
-														<div class="col-auto"><a class="galerySlider__show-all" href="#"><span>
-																Показать все
-																</span><span>(48)</span></a>
-														</div>
-														<div class="col-auto d-none d-lg-block">
-															<div class="galerySlider__conrolls">
-																<div class="galery-prev galery-prev--js">
-																	<svg class="icon icon-chevron-left ">
-																		<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-																	</svg>
-																</div>
-																<div class="galery-next galery-next--js">
-																	<svg class="icon icon-chevron-right ">
-																		<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-																	</svg>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="galerySlider__slider">
-														<div class="swiper-container galery-slider-js">
-															<div class="swiper-wrapper">
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-1.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-1.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-2.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-2.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-3.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-3.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-1.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-1.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-2.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-2.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-3.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-3.png" alt=""/></a>
-																</div>
-															</div>
-														</div>
-														<div class="galerySlider__conrolls d-lg-none">
-															<div class="galery-prev galery-prev--js">
-																<svg class="icon icon-chevron-left ">
-																	<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-																</svg>
-															</div>
-															<div class="galery-next galery-next--js">
-																<svg class="icon icon-chevron-right ">
-																	<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-																</svg>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tabs__content active">
-											<div class="tabContent">
-												<h4 class="tabContent__title">
-													ПИТАНИЕ В БАЗОВОМ ЛАГЕРЕ И ЛАГЕРЕ 1 ПОД ПИКОМ ЛЕНИНА
-													<br class="d-none d-md-block"/>КОМПАНИИ CENTRAL ASIA TRAVEL
-												</h4>
-												<div class="tabContent__img-bl"><img loading="lazy" src="img/@2x/food-img.jpg" alt=""/>
-												</div>
-												<div class="tabContent__txt-box">
-													<p>
-														У нас в Базовом лагере (3600 м) и Лагере 1 (4400 м) под пиком Ленина работают
-														<strong>профессиональные повара</strong>. Они готовят изумительно вкусные, разнообразные и полезные блюда исключительно из свежих и натуральных продуктов, которые мы регулярно привозим из Оша. Наши
-														<strong>порции всегда очень щедрые,</strong>
-														обильные, а если вдруг кто-то не наелся или просто желает дополнительную порцию понравившегося блюда, он может попросить добавку неограниченное число раз.
-													</p>
-													<p><strong>Дневное меню</strong>
-														тщательно продумано и обязательно включает в себя
-														<strong>большое количество свежих фруктов и овощей,</strong>
-														первые и вторые блюда национальной и европейской кухонь (предусмотрены также вегетарианские блюда и индивидуальное питание), десерты и сладости. Даже в Лагере 1 (4400 м), куда мы поднимаем продукты на лошадях, у нас всегда есть в ассортименте свежие фрукты и овощи, потому что мы знаем, насколько важную роль играет
-														<strong>правильное питание</strong>
-														при восхождении.
-													</p>
-													<p>
-														Кроме того, наши повара очень творчески подходят к своей работе и часто удивляют гостей восхитительными
-														<strong>пирогами</strong>
-														и<strong>тортами</strong>
-														даже в условиях сурового высокогорья.
-													</p>
-													<p>
-														У нас в рационе также всегда есть
-														<strong>свежий хлеб.</strong>
-														Мы ежедневно выпекаем его сами в тандырной печи, расположенной на территории Базового лагеря.
-													</p>
-												</div>
-												<div class="tabContent__dd-items dd-menu-js">
-													<div class="tabContent__dd-item active">
-														<div class="tabContent__dd-head dd-head-js">
-															<div class="tabContent__dd-h-txt">Краткое описание дневного меню Базового лагеря (3600) и Лагеря 1 (4400)
-															</div>
-															<div class="tabContent__dd-h-plus">
-																<svg class="icon icon-plus ">
-																	<use xlink:href="img/svg/sprite.svg#plus"></use>
-																</svg>
-															</div>
-														</div>
-														<div class="tabContent__dd-content dd-content-js active">
-															<div class="tabContent__light-streep">
-																<div class="tabContent__ls-img"><img loading="lazy" src="img/@2x/ls-1.png" alt=""/>
-																</div>
-																<div class="tabContent__ls-txt">Завтрак
-																</div>
-															</div>
-															<div class="tabContent__ls-content">
-																<ul>
-																	<li>Колбасно-сырное ассорти;</li>
-																	<li>Первое блюдо: разнообразные молочные каши;</li>
-																	<li>Второе блюдо: гренки / оладьи / омлеты / сосиски / и т.п.;</li>
-																	<li>Десерт: конфеты, печенье, вафли, сухофрукты.</li>
-																</ul>
-																<div class="tabContent__sub-title">Стандартный набор:
-																</div>
-																<ul>
-																	<li>Кетчуп, майонез, горчица, аджика, хрен, хлеб (ассорти);</li>
-																	<li>Чай (черный, зеленый), кофе, какао, сухие сливки, шоколадный крем, варенье/джем, сахар.</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-1.jpg" alt=""/>
-																	</div>
-																</div>
-															</div>
-															<div class="tabContent__light-streep">
-																<div class="tabContent__ls-img"><img loading="lazy" src="img/@2x/ls-2.png" alt=""/>
-																</div>
-																<div class="tabContent__ls-txt">Обед
-																</div>
-															</div>
-															<div class="tabContent__ls-content">
-																<ul>
-																	<li>Салат (1 вид): разнообразный выбор овощных и мясных салатов;</li>
-																	<li>Первое блюдо: разнообразные супы (овощные, мясные);</li>
-																	<li>Второе блюдо: разнообразный выбор блюд восточной и европейской кухни;</li>
-																	<li>Десерт: фрукты, конфеты, печенье, вафли, сухофрукты.</li>
-																</ul>
-																<div class="tabContent__sub-title">Стандартный набор:
-																</div>
-																<ul>
-																	<li>Кетчуп, майонез, горчица, аджика, хрен, хлеб (ассорти);</li>
-																	<li>Чай (черный, зеленый), кофе, какао, сухие сливки, шоколадный крем, варенье/джем, сахар.</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-2.jpg" alt=""/>
-																	</div>
-																</div>
-															</div>
-															<div class="tabContent__light-streep">
-																<div class="tabContent__ls-img"><img loading="lazy" src="img/@2x/ls-3.png" alt=""/>
-																</div>
-																<div class="tabContent__ls-txt">Ужин
-																</div>
-															</div>
-															<div class="tabContent__ls-content tabContent__ls-content--pb0">
-																<ul>
-																	<li>Салат (2 вида): разнообразный выбор овощных и мясных салатов;</li>
-																	<li>Второе блюдо: разнообразный выбор блюд восточной и европейской кухни;</li>
-																	<li>Десерт: фрукты, конфеты, орешки (в ассортименте).</li>
-																</ul>
-																<div class="tabContent__ls-pic-cont d-none d-md-block">
-																	<div class="tabContent__ls-pic"><img loading="lazy" src="img/@2x/food-3.jpg" alt=""/>
-																	</div>
-																</div>
-															</div><a class="tabContent__download-strip" href="#"><span class="tabContent__d-icon"><img loading="lazy" src="img/@2x/download-icon.png" alt=""/></span><span>Скачать файл с детальным описанием меню</span></a>
-														</div>
-													</div>
-												</div>
-												<div class="galerySlider galerySlider--js">
-													<div class="galerySlider__head-row row">
-														<div class="col">
-															<h4 class="galerySlider__title">фотогалерея меню базовых лагерей
-															</h4>
-														</div>
-														<div class="col-auto"><a class="galerySlider__show-all" href="#"><span>
-																Показать все
-																</span><span>(48)</span></a>
-														</div>
-														<div class="col-auto d-none d-lg-block">
-															<div class="galerySlider__conrolls">
-																<div class="galery-prev galery-prev--js">
-																	<svg class="icon icon-chevron-left ">
-																		<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-																	</svg>
-																</div>
-																<div class="galery-next galery-next--js">
-																	<svg class="icon icon-chevron-right ">
-																		<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-																	</svg>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="galerySlider__slider">
-														<div class="swiper-container galery-slider-js">
-															<div class="swiper-wrapper">
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-1.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-1.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-2.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-2.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-3.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-3.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-1.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-1.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-2.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-2.png" alt=""/></a>
-																</div>
-																<div class="swiper-slide"><a class="galerySlider__galery-link" href="img/@2x/galery-img-3.png" data-fancybox="menuBase"><img loading="lazy" src="img/@2x/galery-img-3.png" alt=""/></a>
-																</div>
-															</div>
-														</div>
-														<div class="galerySlider__conrolls d-lg-none">
-															<div class="galery-prev galery-prev--js">
-																<svg class="icon icon-chevron-left ">
-																	<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
-																</svg>
-															</div>
-															<div class="galery-next galery-next--js">
-																<svg class="icon icon-chevron-right ">
-																	<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-																</svg>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+									<div class="sPrice__price">1200 USD
 									</div>
-								</div>
-								<div class="videoBaner">
-									<div class="videoBaner__cont">
-										<div class="videoBaner__mob-title d-lg-none"><span class="up-case">
-												Инфраструктура Базового Лагеря
-												</span><span class="d-none d-md-inline">(3600 м)</span>
-										</div><a class="videoBaner__video" href="#"><img loading="lazy" src="img/@2x/video-bl-img.jpg" alt=""/></a>
-										<div class="videoBaner__descr-bl">
-											<div class="videoBaner__title d-none d-lg-block"><span class="up-case">
-													Инфраструктура Базового Лагеря
-													</span><span>(3600&#160;м)</span>
-											</div>
-											<div class="videoBaner__descr">
-												<div class="d-inline d-lg-none">
-													Базовый лагерь 3600 м
-													
-												</div>компании
-												<strong>Central Asia Travel</strong><br class="d-none d-lg-block"/>
-												под пиком Ленина
-												<br class="d-none d-lg-block"/><span class="d-none d-lg-inline d-xl-none d-xxl-inline">и бесподобные пейзажи Памира</span>
-											</div><a class="videoBaner__btn" href="#">Перейти в видеогалерею »»</a>
-										</div>
-									</div>
-								</div>
-								<div class="form-strip">
-									<div class="form-strip__row row">
-										<div class="form-strip__sign-col col-auto"><img loading="lazy" src="img/@2x/quest-sign.png" alt=""/>
-										</div>
-										<div class="form-strip__title-col col-12 col-lg col-xl-12 col-xxl">
-											<h4>Остались вопросы? Свяжитесь с нами</h4>
-											<p>И наши специалисты подробно на них ответят</p>
-										</div>
-										<div class="col-auto"><a class="form-strip__btn" href="#">Задать вопрос</a>
-										</div>
-									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
 								</div>
 							</div>
-							<div class="sContent__right-col col-xl-auto d-none d-xl-block">
-								<div class="inerestingBl">
-									<h4 class="inerestingBl__title text-center d-xl-none">Это интересно
-									</h4>
-									<div class="inerestingBl__row row">
-										<div class="col-12"><a class="inerestingBl__img" href="#"><img loading="lazy" src="img/@2x/r-col-1.jpg"/></a><a class="inerestingBl__txt" href="#">Наши восходители</a>
-										</div>
-										<div class="col-12"><a class="inerestingBl__img" href="#"><img loading="lazy" src="img/@2x/r-col-2.jpg"/></a><a class="inerestingBl__txt" href="#">отзывы о нас</a>
-										</div>
-										<div class="col-12"><a class="inerestingBl__img" href="#"><img loading="lazy" src="img/@2x/r-col-3.jpg"/></a><a class="inerestingBl__txt" href="#">Экологическая акция<br/>«Чистый снег»</a>
-										</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-3.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">групповой
 									</div>
-									<div class="soc-row row justify-content-center d-none d-xl-flex">
-										<div class="col-auto"><a class="soc-row__item" href="#"><img loading="lazy" src="img/@2x/fb2.png" alt=""/></a>
-										</div>
-										<div class="col-auto"><a class="soc-row__item" href="#"><img loading="lazy" src="img/@2x/inst2.png" alt=""/></a>
-										</div>
-										<div class="col-auto"><a class="soc-row__item" href="#"><img loading="lazy" src="img/@2x/tw2.png" alt=""/></a>
-										</div>
-										<div class="col-auto"><a class="soc-row__item" href="#"><img loading="lazy" src="img/@2x/yt2.png" alt=""/></a>
-										</div>
+									<div class="sPrice__price">1800 USD
 									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-4.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">2 вершины памира
+									</div>
+									<div class="sPrice__price">630 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-5.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">3 вершины памира
+									</div>
+									<div class="sPrice__price">985 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-6.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">4 вершины памира
+									</div>
+									<div class="sPrice__price">1965 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-7.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">VIP
+									</div>
+									<div class="sPrice__price">6890 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-8.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">с кислородом
+									</div>
+									<div class="sPrice__price">6150 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-9.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">бизнес малый
+									</div>
+									<div class="sPrice__price">700 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-10.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">эконом
+									</div>
+									<div class="sPrice__price">400 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-11.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">супер-эконом
+									</div>
+									<div class="sPrice__price">200 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+						<div class="sPrice__col col-12 col-md-6 col-xl-4">
+							<div class="sPrice__img"><img loading="lazy" src="img/@2x/sPrice-row-12.jpg" alt=""/>
+							</div>
+							<div class="sPrice__content">
+								<div class="sPrice__face">
+									<div class="sPrice__name">Курортный Памир
+									</div>
+									<div class="sPrice__price">695 USD
+									</div>
+								</div><a class="sPrice__link" href="#">Перейти<br class="d-lg-none"/>к программе »»</a>
+								<div class="sPrice__nav-btns"><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-eye ">
+										<use xlink:href="img/svg/sprite.svg#eye"></use>
+									</svg></a><a class="sPrice__nav-btn" href="#">
+									<svg class="icon icon-compare ">
+										<use xlink:href="img/svg/sprite.svg#compare"></use>
+									</svg></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				<!-- end sContent-->
+				<!-- end sPrice-->
+				<!-- start sImportant-->
+				<section class="sImportant section" id="sImportant">
+					<div class="container">
+						<div class="sImportant__baner">
+							<div class="sImportant__baner-row row">
+								<div class="sImportant__l-col col-lg-6"><strong class="text-primary">ВАЖНО!</strong>
+									В каждый пакет включен
+									<strong>переезд Ош – Базовый лагерь – Ош</strong><br class="d-none d-xxl-block"/>
+									на комфортабельном транспорте, который мы организуем
+									<strong>в любые удобные для вас даты</strong>
+									в период с 29 июня по 1 сентября 2021.
+								</div>
+								<div class="sImportant__r-col col-lg-6"><strong class="text-primary">Время отправления транспорта:</strong>
+									<ul>
+										<li><strong>Ош – Базовый лагерь</strong>: утром в 06:00;</li>
+										<li><strong>Базовый лагерь – Ош</strong>: первая половина дня (время отправления уточните у начальника Базового лагеря накануне выезда).</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="sImportant__dd-items dd-price-js">
+							<div class="sImportant__dd-item">
+								<div class="sImportant__header dd-head-js">
+									<div class="sImportant__ddh-txt">Сколько стоит экспедиция на пик Ленина и из чего складывается цена
+									</div>
+									<div class="sImportant__ddh-plus">
+										<svg class="icon icon-plus ">
+											<use xlink:href="img/svg/sprite.svg#plus"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="sImportant__content dd-content-js">
+									<div class="sImportant__dd-row row">
+										<div class="sImportant__dd-col col-12 col-sm-6 col-lg-4">
+											<div class="sImportant__ball"><img loading="lazy" src="img/svg/imp-dd-1.svg" alt=""/>
+											</div>
+											<div class="sImportant__ball-txt">
+												Оформление
+												<br/>разрешительных
+												 <br/>документов
+											</div>
+										</div>
+										<div class="sImportant__dd-col col-12 col-sm-6 col-lg-4">
+											<div class="sImportant__ball"><img loading="lazy" src="img/svg/imp-dd-2.svg" alt=""/>
+											</div>
+											<div class="sImportant__ball-txt">
+												Дорога
+												 <br/>до Базового лагеря
+												 <br/>и обратно
+											</div>
+										</div>
+										<div class="sImportant__dd-col col-12 col-sm-6 col-lg-4">
+											<div class="sImportant__ball"><img loading="lazy" src="img/svg/imp-dd-3.svg" alt=""/>
+											</div>
+											<div class="sImportant__ball-txt">
+												Проживание
+												 <br/>и питание в каждый из дней экспедиции
+											</div>
+										</div>
+										<div class="sImportant__dd-col col-12 col-sm-6 col-lg-4">
+											<div class="sImportant__ball"><img loading="lazy" src="img/svg/imp-dd-4.svg" alt=""/>
+											</div>
+											<div class="sImportant__ball-txt">Услуги горного гида и портеров
+											</div>
+										</div>
+										<div class="sImportant__dd-col col-12 col-sm-6 col-lg-4">
+											<div class="sImportant__ball"><img loading="lazy" src="img/svg/imp-dd-5.svg" alt=""/>
+											</div>
+											<div class="sImportant__ball-txt">Аренда снаряжения
+											</div>
+										</div>
+										<div class="sImportant__dd-col col-12 col-sm-6 col-lg-4">
+											<div class="sImportant__ball"><img loading="lazy" src="img/svg/imp-dd-6.svg" alt=""/>
+											</div>
+											<div class="sImportant__ball-txt">
+												Интернет в базовых лагерях,
+												 <br/>баня/душ, услуги прачечной,
+												 <br/>камера хранения и т.д.
+											</div>
+										</div>
+									</div><a class="sImportant__price" href="#">
+									<svg class="icon icon-download ">
+										<use xlink:href="img/svg/sprite.svg#download"></use>
+									</svg><span>Прайс-лист на дополнительные и отдельные услуги в Базовых лагерях под пиком Ленина</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sImportant-->
+				<!-- start sBaner-->
+				<section class="sBaner" id="sBaner">
+					<div class="sBaner__row row">
+						<div class="sBaner__mob-title col-12 d-lg-none">ВОСХОЖДЕНИЕ НА ПИК ЛЕНИНА
+						</div>
+						<div class="col-lg-6"><a class="video-fr" href="#"><img loading="lazy" src="img/@2x/video-bl-img.jpg" alt=""/></a>
+						</div>
+						<div class="sBaner__content-col col-lg-6">
+							<div class="section-title">
+								<h2 class="d-none d-lg-block">
+									ВОСХОЖДЕНИЕ
+									<br class="d-none d-xxl-block"/>НА ПИК ЛЕНИНА
+								</h2>
+								<p>Подъем на вершину пика Ленина (7134 м) и фантастические панорамы вокруг</p>
+								<div class="section-title__sm d-none d-lg-block">Автор: Алексей Колганов
+								</div>
+							</div>
+							<div class="text-center text-lg-start"><a class="sBaner__btn" href="#">Перейти в видеогалерею »»</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sBaner-->
+				<!-- start sSlider-->
+				<section class="sSlider" id="sSlider">
+					<div class="sSlider__container container">
+						<div class="sSlider__slider">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="sSlider__row row">
+											<div class="sSlider__content-col col-12 col-lg-6" style="background-color: #e8aa3b;">
+												<div class="sSlider__date">8 гарантированных дат
+												</div>
+												<div class="sSlider__txt">
+													<h4>КУРОРТНЫЙ ПАМИР</h4>
+													<p>
+														Активный семейный отдых в горах Памира
+														Приключенческий тур с треккингом
+													</p>
+													<div class="sSlider__sm">
+														Кыргызстан, горы Памира
+														8 дней / 7 ночей
+													</div>
+												</div><a class="sSlider__btn" href="#">Подробнее »»</a>
+											</div>
+											<div class="sSlider__img-col col-12 col-lg-6">
+												<div class="sSlider__img"><img class="swiper-lazy" src="#" data-src="img/@2x/sSlider-img.png" alt=""/>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="sSlider__row row">
+											<div class="sSlider__content-col col-12 col-lg-6" style="background-color: #e8aa3b;">
+												<div class="sSlider__date">8 гарантированных дат
+												</div>
+												<div class="sSlider__txt">
+													<h4>КУРОРТНЫЙ ПАМИР</h4>
+													<p>
+														Активный семейный отдых в горах Памира
+														Приключенческий тур с треккингом
+													</p>
+													<div class="sSlider__sm">
+														Кыргызстан, горы Памира
+														8 дней / 7 ночей
+													</div>
+												</div><a class="sSlider__btn" href="#">Подробнее »»</a>
+											</div>
+											<div class="sSlider__img-col col-12 col-lg-6">
+												<div class="sSlider__img"><img class="swiper-lazy" src="#" data-src="img/@2x/sSlider-img.png" alt=""/>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="sSlider__row row">
+											<div class="sSlider__content-col col-12 col-lg-6" style="background-color: #e8aa3b;">
+												<div class="sSlider__date">8 гарантированных дат
+												</div>
+												<div class="sSlider__txt">
+													<h4>КУРОРТНЫЙ ПАМИР</h4>
+													<p>
+														Активный семейный отдых в горах Памира
+														Приключенческий тур с треккингом
+													</p>
+													<div class="sSlider__sm">
+														Кыргызстан, горы Памира
+														8 дней / 7 ночей
+													</div>
+												</div><a class="sSlider__btn" href="#">Подробнее »»</a>
+											</div>
+											<div class="sSlider__img-col col-12 col-lg-6">
+												<div class="sSlider__img"><img class="swiper-lazy" src="#" data-src="img/@2x/sSlider-img.png" alt=""/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="slider-prev slider-prev--js">
+								<svg class="icon icon-arrow-left-long ">
+									<use xlink:href="img/svg/sprite.svg#arrow-left-long"></use>
+								</svg>
+							</div>
+							<div class="slider-next slider-next--js">
+								<svg class="icon icon-arrow-right-long ">
+									<use xlink:href="img/svg/sprite.svg#arrow-right-long"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sSlider-->
+				<div class="form2-cont container">
+					<div class="form-strip form-strip--alt">
+						<div class="form-strip__row row align-items-start">
+							<div class="form-strip__sign-col col-auto"><img loading="lazy" src="img/@2x/quest-sign.png" alt=""/>
+							</div>
+							<div class="form-strip__title-col col-12 col-lg">
+								<h4>Остались вопросы? Свяжитесь с нами</h4>
+								<p>И наши специалисты подробно на них ответят</p>
+							</div>
+							<div class="col-auto"><a class="form-strip__btn" href="#">Задать вопрос</a>
+							</div>
+						</div>
+					</div>
+				</div>
 				<!-- start sRecomend-->
 				<section class="sRecomend section" id="sRecomend">
 					<div class="sRecomend__bg">
 						<div class="sRecomend__bg-img"><img loading="lazy" src="img/@2x/footer-img.jpg" alt=""/>
 						</div>
 					</div>
-					<!--sRecomended-->
-					<div class="container d-none d-xl-block">
-						<div class="section-title">
-							<h2>Рекомендуем посмотреть</h2>
-						</div>
-						<div class="sRecomend__row row">
-							<div class="col-12 col-md-4">
-								<div class="sRecomend__img"><img loading="lazy" src="img/@2x/recomended-1.jpg" alt=""/>
-									<div class="sRecomend__price">895 USD
-									</div>
-								</div><a class="sRecomend__name" href="#">Курортный Памир</a>
-								<div class="sRecomend__descr">Приключенческий тур у подножья пика Ленина
-								</div><a class="sRecomend__more-link" href="#">подробнее...</a>
-							</div>
-							<div class="col-12 col-md-4">
-								<div class="sRecomend__img"><img loading="lazy" src="img/@2x/recomended-2.jpg" alt=""/>
-									<div class="sRecomend__price">1215 USD
-									</div>
-								</div><a class="sRecomend__name" href="#">Восточный микс</a>
-								<div class="sRecomend__descr">Кыргызстан, горы Памира, Узбекистан
-								</div><a class="sRecomend__more-link" href="#">подробнее...</a>
-							</div>
-							<div class="col-12 col-md-4">
-								<div class="sRecomend__img"><img loading="lazy" src="img/@2x/recomended-3.jpg" alt=""/>
-									<div class="sRecomend__price">2250 USD
-									</div>
-								</div><a class="sRecomend__name" href="#">Восхождение на пик Хан-Тенгри</a>
-								<div class="sRecomend__descr">Программы восхождения с Юга и с Севера
-								</div><a class="sRecomend__more-link" href="#">подробнее...</a>
-							</div>
-						</div>
-					</div>
-					<!--double of sidebar-->
-					<div class="container d-xl-none">
-						<div class="section-title text-center">
+					<div class="container">
+						<div class="section-title text-center text-xl-start">
 							<h2>Это интересно</h2>
 						</div>
 						<div class="d-row row">

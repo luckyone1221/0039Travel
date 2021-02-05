@@ -6,6 +6,10 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sGalery/_sGalery.pug
 include ../blocks/sRecomend/_sRecomend.pug
 include ../blocks/sDescr/_sDescr.pug
+include ../blocks/sPrice/_sPrice.pug
+include ../blocks/sImportant/_sImportant.pug
+include ../blocks/sBaner/_sBaner.pug
+include ../blocks/sSlider/_sSlider.pug
 
 block variables
 	- let  mainPage= null
@@ -19,6 +23,11 @@ block pagecontent
 	//-+top-nav()
 	+headerBlockMain()
 	+sDescr()
-	+sContent()
-	+sRecomend()
+	+sPrice()
+	+sImportant()
+	+sBaner()
+	+sSlider()
+	+b.form2-cont.container
+		+formStrip2()
+	+sRecomend2()
 	+footer()

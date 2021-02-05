@@ -66,7 +66,7 @@ mixin ppGlobMenu()
 							+e.BUTTON.btn(type="submit")
 							//-
 				+e.mn-dd
-					+e.dd-item.main-dd-js(data-menu-id="where")
+					+e.dd-item.active.main-dd-js(data-menu-id="where")
 						//-where
 						+e.c-row.row
 							+ddCountryItem(1, 'узбекистан')
@@ -105,7 +105,7 @@ mixin ppGlobMenu()
 							+tddItem()(data-type="advanture")
 							+tddItem(1)(data-type="climbing")
 					//-remove active later
-					+e.dd-item--search.active.main-dd-js(data-menu-id="search")
+					+e.dd-item--search.main-dd-js(data-menu-id="search")
 						+e.searh-cont
 							+form-wrap
 								+input('', 'text')
@@ -122,7 +122,11 @@ mixin ppGlobMenu()
 								+popularTag('СЕМЕЙНЫЙ ОТДЫХ')
 					+e.dd-item.main-dd-js.d-xl-none(data-menu-id="language")
 						+e.mob-langitems
-
+							+mobLangItem(1, 'Русский', 'active')
+							+mobLangItem(2, 'English')
+							+mobLangItem(3, 'Español')
+							+mobLangItem(4, 'Français')
+							+mobLangItem(5, 'Deutsch')
 				+e.footer
 					+e.f-row.row
 						.col
@@ -143,6 +147,12 @@ mixin ppGlobMenu()
 								+flLink('Français')
 								+flLink('Deutsch')
 	//-m-type-pr-1.png
+
+mixin mobLangItem(imgNum, txt, addClasses)
+	+e.ml-item(href="#")(class=addClasses)
+		+e.ml-img
+			img(loading="lazy" src=`img/@2x/lang-${imgNum}.png` alt="")
+		+e.ml-txt=txt
 
 mixin popularTag(txt)
 	+e.p-tag.col-auto

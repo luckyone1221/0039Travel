@@ -223,7 +223,7 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = '02-1905.png';
+	screenName = '02-970.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -322,7 +322,7 @@ function eventHandler() {
 
 		}
 	}
-	makeDDGroup(['.dd-menu-js', '.dd-foot-js']);
+	makeDDGroup(['.dd-menu-js', '.dd-foot-js', '.dd-price-js']);
 
 	//slider in tab
 	let AllSliders = document.querySelectorAll('.galery-slider-js');

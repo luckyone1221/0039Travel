@@ -1,0 +1,80 @@
+mixin sImportant(data)
+	// start sImportant
+	+b.SECTION.sImportant.section#sImportant&attributes(attributes)
+		.container
+			+e.baner
+				+e.baner-row.row
+					+e.l-col.col-lg-6
+						strong.text-primary ВАЖНО!
+						|
+						| В каждый пакет включен
+						|
+						strong переезд Ош – Базовый лагерь – Ош
+						br.d-none.d-xxl-block
+						|
+						| на комфортабельном транспорте, который мы организуем
+						|
+						strong в любые удобные для вас даты
+						|
+						| в период с 29 июня по 1 сентября 2021.
+					+e.r-col.col-lg-6
+						strong.text-primary Время отправления транспорта:
+						ul
+							li
+								strong Ош – Базовый лагерь
+								|: утром в 06:00;
+							li
+								strong Базовый лагерь – Ош
+								|: первая половина дня (время отправления уточните у начальника Базового лагеря накануне выезда).
+			+e.dd-items.dd-price-js
+				+e.dd-item
+					+e.header.dd-head-js
+						+e.ddh-txt Сколько стоит экспедиция на пик Ленина и из чего складывается цена
+						+e.ddh-plus
+							+icon('plus')
+					+e.content.dd-content-js
+						+e.dd-row.row
+							+importantDDItem(1)
+								| Оформление
+								|
+								br
+								| разрешительных
+								| 
+								br
+								| документов
+							+importantDDItem(2)
+								| Дорога
+								| 
+								br
+								| до Базового лагеря
+								| 
+								br
+								| и обратно
+							+importantDDItem(3)
+								| Проживание
+								| 
+								br
+								| и питание в каждый из дней экспедиции
+							+importantDDItem(4)
+								| Услуги горного гида и портеров
+							+importantDDItem(5)
+								| Аренда снаряжения
+							+importantDDItem(6)
+								| Интернет в базовых лагерях,
+								| 
+								br
+								| баня/душ, услуги прачечной,
+								| 
+								br
+								| камера хранения и т.д.
+						+e.price(href="#")
+							+icon('download')
+							span Прайс-лист на дополнительные и отдельные услуги в Базовых лагерях под пиком Ленина
+	// end sImportant
+
+mixin importantDDItem(imgNum)
+	+e.dd-col.col-12.col-sm-6.col-lg-4
+		+e.ball
+			img(loading="lazy" src=`img/svg/imp-dd-${imgNum}.svg` alt="")
+		+e.ball-txt
+			block
